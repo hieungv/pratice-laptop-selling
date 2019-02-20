@@ -1,4 +1,9 @@
 class StaticPagesController < ApplicationController
+  def index
+    @products = Product.page(params[:page]).per 30
+    @products_fratured = Product.all.limit(4)
+  end
+
   def compair; end
 
   def components; end
@@ -9,8 +14,6 @@ class StaticPagesController < ApplicationController
 
   def forgetpass; end
 
-  def index; end
-
   def legal_notice; end
 
   def login; end
@@ -18,8 +21,6 @@ class StaticPagesController < ApplicationController
   def normal; end
 
   def product_details; end
-
-  def products; end
 
   def product_summary; end
 
