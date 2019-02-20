@@ -1,0 +1,19 @@
+<% @products.each do |product| %>
+<li class="span3">
+  <div class="thumbnail">
+  <%= link_to image_tag("products/6.jpg", alt: "register.html"),
+    "product_details.html" %>
+  <div class="caption">
+    <h5><%= product.name %></h5>
+    <p>
+    <%= product.describe %>
+    </p>
+    <h4 style="text-align:center">
+      <a class="btn" href="product_details.html"><i class="icon-zoom-in"></i></a>
+      <a class="btn" href="#"><%= t "btn_add" %><i class="icon-shopping-cart"></i></a>
+      <a class="btn btn-primary" href="#"><%= product.export_price %></a>
+    </h4>
+  </div>
+  </div>
+</li>
+<% end %>
