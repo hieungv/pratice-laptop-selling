@@ -1,0 +1,57 @@
+<div class="container">
+<div class="row">
+<div class="right_col" role="main">
+  <div class="span9">
+    <div class="page-title">
+      <div class="title_left">
+        <h3><%= t "danhsachsp" %></h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <ul class="nav navbar-right panel_toolbox">
+            <li><a href=""></a></li>
+            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+            <li><a class="close-link"><i class="fa fa-close"></i></a></li>
+          </ul>
+        <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+            	<tr>
+                <th style="width: 20px"><%= t "stt" %></th>
+                <th><%= t "ten" %></th>
+                <th><%= t "gianhap" %></th>
+                <th><%= t "giaxuat" %></th>
+                <th><%= t "mieuta" %></th>
+                <th><%= t "ghichu" %></th>
+                <th><%= t "trangthai" %></th>
+                <th><%= t "idhinhanh" %></th>
+                <th><%= t "time" %></th>
+                <th><%= t "sale" %></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @product.each do |y| %>
+              <tr>
+                <td><%= y.id %></td>
+                <td><%= y.name %></td>
+                <td><%= y.import_price %></td>
+                <td><%= y.export_price %></td>
+                <td><%= y.describe %></td>
+                <td><%= y.note %></td>
+                <td><%= y.status %></td>
+                <td><%= y.image %></td>
+                <td><%= y.time_guaranate %></td>
+                <td><%= y.sale %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= link_to t("them"), "products/new", class: "btn btn-primary"%>
+    </div>
+  </div>
+</div>
+</div>

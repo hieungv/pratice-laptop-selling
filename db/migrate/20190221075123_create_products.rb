@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :status
       t.integer :image
       t.integer :time_guaranate
-      t.integer :sale
+      t.float :sale
 
       t.timestamps
     end
