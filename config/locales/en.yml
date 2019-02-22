@@ -37,3 +37,13 @@ en:
   skins: "Bootswatch Skins (11)"
   text_themes: "These are just examples and you can build your own color scheme in the backend."
   background_patterns: "Background Patterns "
+  btn_add: "Add to"
+  latest_products:
+    title_latest: "Latest Products"
+    title_product: "Product name"
+    content_product: "Lorem Ipsum is simply dummy text."
+  fratured_products:
+    title_fratured: "Featured Products"
+    btn_view: "VIEW"
+    title_product: "Product name"
+
