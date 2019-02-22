@@ -25,7 +25,7 @@ en:
   all: "All"
   submit: "Go"
   specials_offer: "Specials Offer"
-  delivery: "Delivery"
+  delivery: "sign up"
   contact: "Contact"
   btn_login: "Login"
   title_login: "Login Block"
@@ -59,3 +59,25 @@ en:
   hp: "Hp"
   user: "User"
   invalid: "email/password not invalid"
+  create: "create"
+  ten: "Tên"
+  gianhap: "Giá nhập"
+  giaxuat: "Giá xuất"
+  mieuta: "Miêu tả"
+  ghichu: "Ghi chú"
+  trangthai: "Trạng thái"
+  idhinhanh: "ID hình ảnh"
+  time: "Thời gian bảo hành"
+  sale: "Giảm giá"
+  danhsachsp: "Danh sách sản phẩm "
+  them: "Thêm"
+  stt: "STT"
+  name: "Name"
+  import_price:
+  export_price:
+  describe:
+  note:
+  status: 
+  image: "Image"
+  time_guaranate: "Time guaranate"
+  sale: "Sale"

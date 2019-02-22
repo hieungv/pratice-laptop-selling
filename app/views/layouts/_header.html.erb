@@ -43,7 +43,7 @@
       <li class=""><a href="special_offer.html"><%= t "specials_offer" %></a></li>
       <% if logged_in? %>
         <% if session[:admin] %>
-          <li><%= link_to "admin","#" %></li>
+          <li><%= link_to "admin", admin_path %></li>
         <% end %>
           <li><%= link_to "Profile", "#" %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>

@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_085211) do
     t.integer "status"
     t.integer "image"
     t.integer "time_guaranate"
-    t.integer "sale"
+    t.float "sale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

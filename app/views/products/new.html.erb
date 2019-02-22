@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with model: @product, url: products_path do |f| %>
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name %>
+
+      <%= f.label :import_price, t("import_price") %>
+      <%= f.number_field :import_price %>
+
+      <%= f.label :export_price, t("export_price") %>
+      <%= f.number_field :export_price %>
+
+      <%= f.label :describe, t("describe") %>
+      <%= f.text_field :describe %>
+
+      <%= f.label :note, t("note") %>
+      <%= f.text_field :note %>
+
+      <%= f.label :status, t("status") %>
+      <%= f.number_field :status %>
+
+      <%= f.label :image, t("image") %>
+      <%= f.number_field :image %>
+
+      <%= f.label :time_guaranate, t("time_guaranate") %>
+      <%= f.text_field :time_guaranate %>
+
+      <%= f.label :sale, t("sale") %>
+      <%= f.number_field :sale %>     
+
+      <%= f.submit t("create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
