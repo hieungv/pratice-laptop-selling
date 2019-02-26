@@ -1,4 +1,5 @@
 password_min_length: 6
 email_max_length: 255
 name_max_length: 50
-  
+address_max_length: 1000
+city_length: 20
