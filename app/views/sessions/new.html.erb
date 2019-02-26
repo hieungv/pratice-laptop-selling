@@ -1,0 +1,13 @@
+<div class="modal-body">
+  <%= form_for(:session, url: login_path) do |f| %>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "control-group" %>
+    
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "control-group" %>
+    <br>
+    <%= f.submit t("btn_sign_in"), class: "btn btn-success" %>
+    <%= f.submit t("btn_lose"), class: "btn", data: {dismiss: "modal"}, aria: {hidden: "true"} %>
+  <% end %>
+</div>

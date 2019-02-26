@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
   root "static_pages#index"
-  get "static_pages/compair"
-  get "static_pages/components"
-  get "static_pages/contact"
-  get "static_pages/faq"
-  get "static_pages/forgetpass"
-  get "static_pages/legal_notice"
-  get "static_pages/login"
-  get "static_pages/normal"
-  get "static_pages/product_details"
-  get "static_pages/products"
-  get "static_pages/product_summary"
-  get "static_pages/register"
-  get "static_pages/special_offer"
-  get "static_pages/tac"
+
+  get "sessions/new"
+  get "/index", to: "static_pages#index"
+  get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  post "/signup", to: "users#create"
+  delete "/logout", to: "sessions#destroy"
+  resources :users
 end
