@@ -1,4 +1,7 @@
 <div class="modal-body">
+  <% if flash[:danger] %>
+    <div class="alert alert-danger"><%= flash[:danger] %></div>
+  <% end %> 
   <%= form_for(:session, url: login_path) do |f| %>
 
     <%= f.label :email %>
@@ -7,6 +10,11 @@
     <%= f.label :password %>
     <%= f.password_field :password, class: "control-group" %>
     <br>
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t".remember_me" %></span>
+      <% end %>
+    <br/>
     <%= f.submit t("btn_sign_in"), class: "btn btn-success" %>
     <%= f.submit t("btn_lose"), class: "btn", data: {dismiss: "modal"}, aria: {hidden: "true"} %>
   <% end %>
