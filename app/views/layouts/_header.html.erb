@@ -26,7 +26,7 @@
   <span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <%= link_to image_tag("logo/logo.png", alt: " Logo"), "index.html", class: "brand" %>
+    <%= link_to image_tag("logo/logo.png", alt: " Logo"), root_path, class: "brand" %>
     <form class="form-inline navbar-search" method="post" action="products.html" >
     <input id="srchFld" class="srchTxt" type="text" />
       <select class="srchTxt">
@@ -41,7 +41,7 @@
     </form>
     <ul id="topMenu" class="nav pull-right">
       <li class=""><a href="special_offer.html"><%= t "specials_offer" %></a></li>
-      <li class=""><a href="normal.html"><%= t "delivery" %></a></li>
+      <li class=""><a href="signup.html"><%= t "signup" %></a></li>
       <li class=""><a href="contact.html"><%= t "contact" %></a></li>
       <li class="">
         <a href="#login" role="button" data-toggle="modal" style="padding-right:0">
@@ -54,27 +54,7 @@
             aria-hidden="true">×</button>
           <h3><%= t "title_login" %></h3>
         </div>
-        <div class="modal-body">
-          <form class="form-horizontal loginFrm">
-            <div class="control-group">
-              <input type="text" id="inputEmail" placeholder="Email">
-            </div>
-            <div class="control-group">
-              <input type="password" id="inputPassword" placeholder="Password">
-            </div>
-            <div class="control-group">
-              <label class="checkbox">
-                <input type="checkbox"><%= t "remember_me" %>
-              </label>
-            </div>
-          </form>
-          <button type="submit" class="btn btn-success">
-            <%= t "btn_sign_in" %>
-          </button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true">
-            <%= t "btn_lose" %>
-          </button>
-        </div>
+        <%= render "layouts/login" %>
         </div>
       </li>
     </ul>

@@ -46,4 +46,9 @@ en:
     title_fratured: "Featured Products"
     btn_view: "VIEW"
     title_product: "Product name"
-
+  register_success: "register_success"
+  register_failed: "Register failed"
+  form_container: "The form contains"
+  error: "error"
+  signup: "sign up"
+  create_account: "Create my account"
