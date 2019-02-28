@@ -10,13 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_02_27_085211) do
 
-=======
-
-ActiveRecord::Schema.define(version: 2019_02_26_030656) do
->>>>>>> Show Product
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "order_id"
@@ -104,8 +99,5 @@ ActiveRecord::Schema.define(version: 2019_02_26_030656) do
     t.string "password_digest"
     t.boolean "admin", default: false
   end
-<<<<<<< HEAD
 
-=======
->>>>>>> Show Product
 end

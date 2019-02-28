@@ -1,8 +1,7 @@
 <% @products.each do |product| %>
 <li class="span3">
   <div class="thumbnail">
-  <%= link_to image_tag("products/6.jpg", alt: "register.html"),
-    "product_details.html" %>
+  <%= link_to image_tag("products/6.jpg", alt: "register.html"), product %>
   <div class="caption">
     <h5><%= product.name %></h5>
     <p>
