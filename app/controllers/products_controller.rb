@@ -23,6 +23,8 @@ class ProductsController < ApplicationController
     @img = Image.find_by(product_id: @product_detail)
     return if @product_detail && @img
     redirect_to root_path
+    @find = @cart.line_item
+    @show_product_cart = Product.find_by(id: @find)
   end
 
   private
