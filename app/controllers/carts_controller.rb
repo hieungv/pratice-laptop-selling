@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  include LineItemsHelper
   before_action :find_cart, only: [:show, :edit, :update, :destroy]
   def index
     @carts = Cart.all
@@ -26,10 +27,21 @@ class CartsController < ApplicationController
     end
   end
 
+  def destroy
+    @cart = current_cart
+    @cart.destroy
+    session[:cart_id] = nil
+
+    respond_to do |format|
+      format.html{redirect_to carts_url}
+      format.json{head :no_content}
+    end
+  end
+
   private
 
   def find_cart
-    return if @cart = Cart.find(params[:id])
+    return if @cart = Cart.find_by(id: params[:id])
     redirect_to root_path
   end
 
