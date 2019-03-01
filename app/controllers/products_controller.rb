@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
+  include LineItemsHelper
   before_action :admin_user, only: %i(destroy)
+  before_action :search_product, only: %i(edit update)
 
   def index
     @product = Product.all
@@ -25,8 +27,22 @@ class ProductsController < ApplicationController
     @img = Image.find_by(product_id: @product_detail)
     return if @product_detail && @img
     redirect_to root_path
-    @find = @cart.line_item
+    @find = current_cart.line_items
     @show_product_cart = Product.find_by(id: @find)
+  end
+
+  def edit; end
+
+  def update
+    @product = Product.find_by id: params[:id]
+
+    if @product.update_attributes product_params
+      flash[:success] = t "success"
+      redirect_to admin_path
+    else
+      flash[:danger] = t "no_success"
+      render :new
+    end
   end
 
   def destroy
@@ -49,5 +65,11 @@ class ProductsController < ApplicationController
 
   def admin_user
     redirect_to root_url unless current_user.admin?
+  end
+
+  def search_product
+    return if @product = Product.find_by(id: params[:id])
+    flash[:success] = t "not_found_product"
+    redirect_to admin_path
   end
 end

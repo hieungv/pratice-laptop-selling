@@ -24,7 +24,7 @@ en:
   itemes_cart: "Itemes in your cart"
   all: "All"
   submit: "Go"
-  specials_offer: "Specials Offer"
+  check_order: "Check Order"
   delivery: "sign up"
   contact: "Contact"
   btn_login: "Login"
@@ -77,9 +77,40 @@ en:
   export_price:
   describe:
   note:
-  status: 
+  status:
   image: "Image"
   time_guaranate: "Time guaranate"
   sale: "Sale"
   success: "success"
   no_success: "no success"
+  order_controller:
+    mess_order_success: "Order was successfully created."
+  view_cart:
+    home: "Home"
+    shopping_cart: "SHOPPING CART"
+    btn_continue_shopping: " Continue Shopping"
+    item: "Item(s)"
+    product: "Product"
+    description: "Description"
+    quantity_update: "Quantity/Update"
+    price: "Price"
+    sale: "Sale (%)"
+    total: "Total"
+    mess_delete: "Are you sure?"
+    btn_empty_cart: "Empty cart"
+    btn_next: "Next"
+  order:
+    select: "Select a payment method"
+    select_1: "Payment on delivery"
+    select_2: "ATM"
+  line_item:
+    cart_code: "Cart Code"
+    btn_check: "Check"
+  product:
+    text_search: "Enter name product"
+  update: "Update"
+  save_changes: "Save changes"
+  not_found_product: "not found product"
+  delete: "Xóa"
+  edit: "Sửa"
+  add: "Thêm"

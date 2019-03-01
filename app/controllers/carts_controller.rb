@@ -1,7 +1,10 @@
 class CartsController < ApplicationController
-  before_action :find_cart, only: [:show, :edit, :update, :destroy]
+  include LineItemsHelper
+  before_action :find_cart, only: [:show, :update, :destroy]
   def index
-    @carts = Cart.all
+    @carts = []
+    return if session[:cart_id].nil?
+    @carts << Cart.find_by_id(session[:cart_id])
   end
 
   def show; end
@@ -10,14 +13,12 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  def edit; end
-
   def create
     @cart = Cart.new(cart_params)
 
     respond_to do |format|
       if @cart.save
-        format.html{redirect_to @cart}
+        format.html{redirect_to "/"}
         format.json{render :show, status: :created, location: @cart}
       else
         format.html{render :new}
@@ -26,10 +27,21 @@ class CartsController < ApplicationController
     end
   end
 
+  def destroy
+    @cart = current_cart
+    @cart.destroy
+    session[:cart_id] = nil
+
+    respond_to do |format|
+      format.html{redirect_to "/"}
+      format.json{head :no_content}
+    end
+  end
+
   private
 
   def find_cart
-    return if @cart = Cart.find(params[:id])
+    return if @cart = Cart.find_by(id: params[:id])
     redirect_to root_path
   end
 

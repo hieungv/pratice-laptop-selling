@@ -1,25 +1,62 @@
 <p id="notice"><%= notice %></p>
+<div id="mainBody">
+  <div class="container">
+  <div class="row">
+<div class="span9">
+<p id="notice"><%= notice %></p>
 
-<h1>Carts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @carts.each do |cart| %>
+    <ul class="breadcrumb">
+    <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
+    <li class="active"><%= t "view_cart.shopping_cart" %></li>
+    </ul>
+  <h3><%= t "view_cart.shopping_cart" %>[ <small>3 <%= t "view_cart.item" %></small>]
+    <a href="products.html" class="btn btn-large pull-right">
+      <i class="icon-arrow-left"></i><%= t "view_cart.btn_continue_shopping" %>
+    </a>
+  </h3>
+  <hr class="soft"/>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= link_to "Show", cart %></td>
-        <td><%= link_to "Edit", edit_cart_path(cart) %></td>
-        <td><%= link_to "Destroy", cart, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <th><%= t "view_cart.product" %></th>
+        <th><%= t "view_cart.description" %></th>
+        <th><%= t "view_cart.quantity_update" %></th>
+        <th><%= t "view_cart.price" %></th>
+        <th><%= t "view_cart.sale" %></th>
+        <th><%= t "view_cart.total" %></th>
       </tr>
+    </thead>
+    <tbody>
+     <%= @carts.each do |cart| %>
+    <%= render "carts/show_product_cart" %>
     <% end %>
-  </tbody>
-</table>
+      <tr>
+        <td colspan="6" style="text-align:right">Total Price: </td>
+        <td> $228.00</td>
+      </tr>
+      <tr>
+        <td colspan="6" style="text-align:right">Total Discount:  </td>
+        <td> $50.00</td>
+        </tr>
+      <tr>
+        <td colspan="6" style="text-align:right">Total Tax: </td>
+        <td> $31.00</td>
+      </tr>
+      <tr>
+        <td>
+          <%= button_to @cart, :method => :delete, data: {:confirm => 'Are you sure?'} do %>
+        <i >Empty cart</i>
+      <% end %>
 
-<br>
+        </td>
+        <td colspan="5" style="text-align:right"><strong>TOTAL ($228 - $50 + $31) =</strong></td>
+        <td class="label label-important" style="display:block"> <strong> $155.00 </strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="products.html" class="btn btn-large"><i class="icon-arrow-left"></i><%= t "continue_shopping" %></a>
 
-<%= link_to "New Cart", new_cart_path %>
+  <a href="login.html" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+</div>
+
+</div></div></div>

@@ -11,10 +11,11 @@
     <% end %>
     <span class="btn btn-mini">$155.00</span>
     <%= link_to  "#"  do %><span class="">$</span><% end %>
-    <%= link_to "#" do %><span class="btn btn-mini btn-primary">
+    <%= link_to cart_path(current_cart.id) do %><span class="btn btn-mini btn-primary">
       <i class="icon-shopping-cart icon-white"></i>
       [ 3 ] <%= t "itemes_cart" %></span>
     <% end %>
+
   </div>
   </div>
 </div>
@@ -27,20 +28,11 @@
 </a>
   <div class="navbar-inner">
     <%= link_to image_tag("logo/logo.png", alt: " Logo"), root_path, class: "brand" %>
-    <form class="form-inline navbar-search" method="post" action="products.html" >
-    <input id="srchFld" class="srchTxt" type="text" />
-      <select class="srchTxt">
-      <option><%= t "all" %></option>
-      <option> <%= t "dell" %></option>
-      <option><%= t "asus" %></option>
-      <option><%= t "hp" %></option>
-    </select>
-      <button type="submit" id="submitButton" class="btn btn-primary">
-        <%= t "submit" %>
-      </button>
-    </form>
+    <%= render "products/search" %>
     <ul id="topMenu" class="nav pull-right">
-      <li class=""><a href="special_offer.html"><%= t "specials_offer" %></a></li>
+      <li class="">
+        <%= link_to t("check_order"), checkorder_path %>
+      </li>
       <% if logged_in? %>
         <% if session[:admin] %>
           <li><%= link_to "admin", admin_path %></li>

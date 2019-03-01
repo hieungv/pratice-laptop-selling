@@ -1,0 +1,5 @@
+<%= form_tag search_path, class: "form-inline navbar-search", method: :get do %>
+  <%= text_field_tag 'text', params[:text],
+    placeholder: t("product.text_search"), class: "srchTxt" %>
+  <%= submit_tag "     ", id: "srchFld" %>
+<% end %>
