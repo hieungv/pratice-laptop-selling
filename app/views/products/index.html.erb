@@ -32,6 +32,7 @@
                 <th><%= t "idhinhanh" %></th>
                 <th><%= t "time" %></th>
                 <th><%= t "sale" %></th>
+                <th><%= t "action" %></th>
               </tr>
             </thead>
             <tbody>
@@ -47,6 +48,9 @@
                 <td><%= y.image %></td>
                 <td><%= y.time_guaranate %></td>
                 <td><%= y.sale %></td>
+                <td>
+                  <%= link_to t("xoa"), y, method: :delete, class: "btn btn-primary"%>
+                </td>
               </tr>
               <% end %>
             </tbody>
