@@ -81,3 +81,5 @@ en:
   image: "Image"
   time_guaranate: "Time guaranate"
   sale: "Sale"
+  success: "success"
+  no_success: "no success"
