@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
   delete "/logout", to: "sessions#destroy"
+  post "/line_item", to: "line_items#create"
   resources :users
   get "/product_details", to: "static_pages#product_details"
   get "admin/admin"
@@ -16,4 +17,6 @@ Rails.application.routes.draw do
   #root "admin#admin"
   #get "admin/admin"
   resources :products
+  resources :carts
+  resources :line_items
 end
