@@ -2,7 +2,9 @@ class CartsController < ApplicationController
   include LineItemsHelper
   before_action :find_cart, only: [:show, :edit, :update, :destroy]
   def index
-    @carts = Cart.all
+    @carts = []
+    return if session[:cart_id].nil?
+    @carts << Cart.find_by_id(session[:cart_id])
   end
 
   def show; end

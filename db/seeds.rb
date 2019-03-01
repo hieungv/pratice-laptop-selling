@@ -6,7 +6,8 @@ Product.create!(name: "Laptop xxx",
              import_price: "200",
              export_price: "300",
              status: "1",
-             image: "1")
+             image: "1",
+             sale: "40")
 
 99.times do |n|
   name  = Faker::Name.name
@@ -14,5 +15,6 @@ Product.create!(name: "Laptop xxx",
              import_price: "200",
              export_price: "300",
              status: "1",
-             image: "1")
+             image: "1",
+             sale: "40")
 end
