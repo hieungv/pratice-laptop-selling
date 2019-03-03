@@ -6,21 +6,24 @@
 <p id="notice"><%= notice %></p>
 
     <ul class="breadcrumb">
-    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-    <li class="active"> SHOPPING CART</li>
+    <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
+    <li class="active"><%= t "view_cart.shopping_cart" %></li>
     </ul>
-  <h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="products.html" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>
+  <h3><%= t "view_cart.shopping_cart" %>[ <small>3 <%= t "view_cart.item" %></small>]
+    <a href="products.html" class="btn btn-large pull-right">
+      <i class="icon-arrow-left"></i><%= t "view_cart.btn_continue_shopping" %>
+    </a>
+  </h3>
   <hr class="soft"/>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Product</th>
-        <th>Description</th>
-        <th>Quantity/Update</th>
-        <th>Price</th>
-        <th>Discount</th>
-        <th>Tax</th>
-        <th>Total</th>
+        <th><%= t "view_cart.product" %></th>
+        <th><%= t "view_cart.description" %></th>
+        <th><%= t "view_cart.quantity_update" %></th>
+        <th><%= t "view_cart.price" %></th>
+        <th><%= t "view_cart.sale" %></th>
+        <th><%= t "view_cart.total" %></th>
       </tr>
     </thead>
     <tbody>
@@ -51,7 +54,7 @@
       </tr>
     </tbody>
   </table>
-  <a href="products.html" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
+  <a href="products.html" class="btn btn-large"><i class="icon-arrow-left"></i><%= t "continue_shopping" %></a>
 
   <a href="login.html" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
 </div>

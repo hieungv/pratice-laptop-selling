@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   #root "products#index"
   root "static_pages#index"
   get "sessions/new"

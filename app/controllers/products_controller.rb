@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  include LineItemsHelper
   before_action :admin_user, only: %i(destroy)
 
   def index
@@ -25,7 +26,7 @@ class ProductsController < ApplicationController
     @img = Image.find_by(product_id: @product_detail)
     return if @product_detail && @img
     redirect_to root_path
-    @find = @cart.line_item
+    @find = current_cart.line_items
     @show_product_cart = Product.find_by(id: @find)
   end
 
