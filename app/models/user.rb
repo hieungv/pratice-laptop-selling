@@ -14,6 +14,10 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  def current_product? product
+    self == product
+  end
+
   private
 
   def downcase_email
