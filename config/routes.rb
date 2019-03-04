@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "admin/index"
   get "/checkorder", to: "line_items#index"
   get "/check", to: "line_items#show"
+  get "/search", to: "static_pages#index"
   resources :carts
   resources :products
   resources :users

@@ -100,8 +100,11 @@ en:
     btn_empty_cart: "Empty cart"
     btn_next: "Next"
   order:
+    select: "Select a payment method"
     select_1: "Payment on delivery"
     select_2: "ATM"
   line_item:
     cart_code: "Cart Code"
     btn_check: "Check"
+  product:
+    text_search: "Enter name product"
