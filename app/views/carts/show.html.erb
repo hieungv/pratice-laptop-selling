@@ -1,44 +1,54 @@
 <div id="mainBody">
   <div class="container">
-  <div class="row">
-<div class="span9">
-<p id="notice"><%= notice %></p>
-
-    <ul class="breadcrumb">
-    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-    <li class="active"> SHOPPING CART</li>
-    </ul>
-  <h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="products.html" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>
-  <hr class="soft"/>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Description</th>
-        <th>Quantity/Update</th>
-        <th>Price</th>
-        <th>Sale %</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-    <%= render current_cart %>
-      <tr>
-        <td>
-          <%= button_to @cart, :method => :delete, data: {:confirm => 'Are you sure?'} do %>
-          <i >Empty cart</i>
-    <% end %>
-        </td>
-        <td colspan="5" style="text-align:right">
-          <%= current_cart.total_price %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <a href="products.html" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
-
-  <a href="login.html" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+    <div class="row">
+      <div class="span9">
+        <p id="notice"><%= notice %></p>
+        <ul class="breadcrumb">
+        <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
+        <li class="active"><%= t "view_cart.shopping_cart" %></li>
+        </ul>
+        <h3><%= t "view_cart.shopping_cart" %>[ <small>3 <%= t "view_cart.item" %></small>]
+          <%= link_to root_path, class: "btn btn-large pull-right" do %>
+            <i class="icon-arrow-left"></i><%= t "view_cart.btn_continue_shopping" %>
+          <% end %>
+        </h3>
+        <hr class="soft"/>
+        <div id="cart">
+          <% if hide_cart_if? %>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><%= t "view_cart.product" %></th>
+                  <th><%= t "view_cart.description" %></th>
+                  <th><%= t "view_cart.quantity_update" %></th>
+                  <th><%= t "view_cart.price" %></th>
+                  <th><%= t "view_cart.sale" %></th>
+                  <th><%= t "view_cart.total" %></th>
+                </tr>
+              </thead>
+              <tbody>
+              <%= render current_cart %>
+                <tr>
+                  <td>
+                    <%= button_to @cart, :method => :delete,
+                      data: {:confirm => t("mess_delete")} do %>
+                      <i ><%= t "view_cart.btn_empty_cart" %></i>
+                    <% end %>
+                  </td>
+                  <td colspan="5" style="text-align:right">
+                    <%= current_cart.total_price %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <%= link_to new_order_path, method: :get, class: "btn btn-large pull-right"  do %><br>
+              <i class="icon-arrow-right"></i> <%= t "view_cart.btn_next" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <%= link_to "Edit", edit_cart_path(@cart) %> |
+    <%= link_to "Back", carts_path %>
+    </div>
+  </div>
 </div>
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
-</div></div></div>

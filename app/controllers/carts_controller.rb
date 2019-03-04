@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   include LineItemsHelper
-  before_action :find_cart, only: [:show, :edit, :update, :destroy]
+  before_action :find_cart, only: [:show, :update, :destroy]
   def index
     @carts = []
     return if session[:cart_id].nil?
@@ -13,14 +13,12 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  def edit; end
-
   def create
     @cart = Cart.new(cart_params)
 
     respond_to do |format|
       if @cart.save
-        format.html{redirect_to @cart}
+        format.html{redirect_to "/"}
         format.json{render :show, status: :created, location: @cart}
       else
         format.html{render :new}
@@ -35,7 +33,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html{redirect_to carts_url}
+      format.html{redirect_to "/"}
       format.json{head :no_content}
     end
   end

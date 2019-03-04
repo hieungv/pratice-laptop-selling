@@ -77,9 +77,28 @@ en:
   export_price:
   describe:
   note:
-  status: 
+  status:
   image: "Image"
   time_guaranate: "Time guaranate"
   sale: "Sale"
   success: "success"
   no_success: "no success"
+  order_controller:
+    mess_order_success: "Order was successfully created."
+  view_cart:
+    home: "Home"
+    shopping_cart: "SHOPPING CART"
+    btn_continue_shopping: " Continue Shopping"
+    item: "Item(s)"
+    product: "Product"
+    description: "Description"
+    quantity_update: "Quantity/Update"
+    price: "Price"
+    sale: "Sale (%)"
+    total: "Total"
+    mess_delete: "Are you sure?"
+    btn_empty_cart: "Empty cart"
+    btn_next: "Next"
+  order:
+    select_1: "Payment on delivery"
+    select_2: "ATM"
