@@ -1,11 +1,13 @@
 class LineItemsController < ApplicationController
   include LineItemsHelper
-  before_action :find_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_line_item, only: [:edit, :update, :destroy]
   def index
     @line_items = LineItem.all
   end
 
-  def show; end
+  def show
+    @cart_code = LineItem.where order_id: params[:cart_code]
+  end
 
   def new
     @line_item = LineItem.new

@@ -24,7 +24,7 @@ en:
   itemes_cart: "Itemes in your cart"
   all: "All"
   submit: "Go"
-  specials_offer: "Specials Offer"
+  check_order: "Check Order"
   delivery: "sign up"
   contact: "Contact"
   btn_login: "Login"
@@ -102,3 +102,6 @@ en:
   order:
     select_1: "Payment on delivery"
     select_2: "ATM"
+  line_item:
+    cart_code: "Cart Code"
+    btn_check: "Check"

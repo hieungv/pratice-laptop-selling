@@ -41,7 +41,9 @@
       </button>
     </form>
     <ul id="topMenu" class="nav pull-right">
-      <li class=""><a href="special_offer.html"><%= t "specials_offer" %></a></li>
+      <li class="">
+        <%= link_to t("check_order"), checkorder_path %>
+      </li>
       <% if logged_in? %>
         <% if session[:admin] %>
           <li><%= link_to "admin", admin_path %></li>
