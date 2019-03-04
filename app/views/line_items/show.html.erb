@@ -1,14 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @line_item.product_id %>
-</p>
-
-<p>
-  <strong>Cart:</strong>
-  <%= @line_item.cart_id %>
-</p>
-
-<%= link_to "Edit", edit_line_item_path(@line_item) %> |
-<%= link_to "Back", line_items_path %>
+<div id="mainBody">
+  <div class="container">
+    <div class="row">
+      <div class="span9"><table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><%= t "view_cart.product" %></th>
+              <th><%= t "view_cart.description" %></th>
+              <th><%= t "view_cart.quantity_update" %></th>
+              <th><%= t "view_cart.price" %></th>
+              <th><%= t "view_cart.sale" %></th>
+              <th><%= t "view_cart.total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%=  @cart_code.each do |a| %>
+              <tr>
+                <td>
+                  <%= link_to image_tag("products/6.jpg") %>
+                 <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
+                <td><%= a.product.name %><br/>Color : black, Material : metal</td>
+                <td><%= a.quantity %></td>
+                <td><%= a.product.export_price %></td>
+                <td><%= a.product.sale %></td>
+                <td><%= a.total_price %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

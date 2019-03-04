@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :orders
-  #root "products#index"
   root "static_pages#index"
   get "sessions/new"
   get "/index", to: "static_pages#index"
@@ -11,13 +9,14 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
   delete "/logout", to: "sessions#destroy"
   post "/line_item", to: "line_items#create"
-  resources :users
   get "/product_details", to: "static_pages#product_details"
   get "admin/admin"
   get "admin/index"
-  #root "admin#admin"
-  #get "admin/admin"
-  resources :products
+  get "/checkorder", to: "line_items#index"
+  get "/check", to: "line_items#show"
   resources :carts
+  resources :products
+  resources :users
+  resources :orders
   resources :line_items
 end
