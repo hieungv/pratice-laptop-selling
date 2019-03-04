@@ -2,12 +2,12 @@
   <div class="well well-small">
     <%= link_to  id: "myCart" do %>
       <%= link_to image_tag("ico/ico-cart.png", alt: "cart") %>
-      3 <%= t "itemes_cart" %>
-      <span class="badge badge-warning pull-right">$155.00</span>
+      <%= current_cart.line_items.count %> <%= t "itemes_cart" %>
+      <span class="badge badge-warning pull-right"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
     <% end %>
   </div>
   <ul id="sideManu" class="nav nav-tabs nav-stacked">
-    <li class="subMenu open"><a> LAPTOP [230]</a>
+    <li class="subMenu open"><a> LAPTOP [<%= Product.count %>]</a>
       <ul>
         <li>
           <%= link_to "products.html", class: "active" do %>
@@ -43,10 +43,10 @@
   </ul>
   <br/>
   <div class="thumbnail">
-  <%= link_to image_tag("products/panasonic.jpg",
+  <%= link_to image_tag(Product.last.images.first.image,
     alt: "Bootshop panasonoc New camera") %>
   <div class="caption">
-    <h5>Panasonic</h5>
+    <h5><%= Product.last.name %></h5>
     <h4 style="text-align:center">
       <a class="btn" href="product_details.html">
         <i class="icon-zoom-in"></i>
@@ -58,10 +58,10 @@
   </div>
   </div><br/>
   <div class="thumbnail">
-    <%= link_to image_tag("products/kindle.png",
+    <%= link_to image_tag(Product.first.images.first.image,
       alt: "Bootshop panasonoc New camera", title: "Bootshop New Kindel") %>
     <div class="caption">
-      <h5>Kindle</h5>
+      <h5><%= Product.first.name %></h5>
         <h4 style="text-align:center">
           <a class="btn" href="product_details.html">
             <i class="icon-zoom-in"></i>

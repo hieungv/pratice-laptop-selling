@@ -13,7 +13,7 @@
       <div id="gallery" class="span3">
         <a href="themes/images/products/large/f1.jpg"
           title="Fujifilm FinePix S2950 Digital Camera">
-          <%= image_tag(@img.image, style: "width:100%") %></a>
+          <%= image_tag("products/6.jpg", style: "width:100%") %></a>
       <div id="differentview" class="moreOptopm carousel slide">
         <div class="carousel-inner">
           <div class="item active">
@@ -57,12 +57,10 @@
             <hr class="soft"/>
             <form class="form-horizontal qtyFrm">
               <div class="control-group">
-              <label class="control-label"><span>$222.00</span></label>
+              <label class="control-label"><span><%= number_to_currency(@product_detail.export_price, unit: "$", precision: 0, format: "%u %n") %></span></label>
               <div class="controls">
-              <input type="number" class="span1" placeholder="Qty."/>
-                <button type="submit"
-                  class="btn btn-large btn-primary pull-right"> Add to cart
-                  <i class=" icon-shopping-cart"></i></button>
+                <%= button_to "Add to cart", line_item_path(product_id: params[:id]), class: "btn btn-large btn-primary pull-right" %>
+
               </div>
               </div>
             </form>
@@ -351,7 +349,7 @@
                 <li class="span3">
                   <div class="thumbnail">
                   <a href="product_details.html">
-                    <img src="themes/images/products/10.jpg" alt=""/></a>
+                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>
@@ -370,7 +368,7 @@
                 <li class="span3">
                   <div class="thumbnail">
                   <a href="product_details.html">
-                    <img src="themes/images/products/11.jpg" alt=""/></a>
+                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>
@@ -389,26 +387,7 @@
                 <li class="span3">
                   <div class="thumbnail">
                   <a href="product_details.html">
-                    <img src="themes/images/products/12.jpg" alt=""/></a>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                     <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html"><
-                    img src="themes/images/products/13.jpg" alt=""/></a>
+                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>
@@ -427,7 +406,26 @@
                 <li class="span3">
                   <div class="thumbnail">
                   <a href="product_details.html">
-                    <img src="themes/images/products/1.jpg" alt=""/></a>
+                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
+                  <div class="caption">
+                    <h5>Manicure &amp; Pedicure</h5>
+                    <p>
+                    Lorem Ipsum is simply dummy text.
+                    </p>
+                     <h4 style="text-align:center">
+                      <a class="btn" href="product_details.html">
+                        <i class="icon-zoom-in"></i></a>
+                        <a class="btn" href="#">Add to
+                          <i class="icon-shopping-cart"></i></a>
+                          <a class="btn btn-primary" href="#">&euro;222.00</a>
+                    </h4>
+                  </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                  <a href="product_details.html">
+                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>
@@ -446,7 +444,7 @@
                 <li class="span3">
                   <div class="thumbnail">
                     <a href="product_details.html">
-                      <img src="themes/images/products/2.jpg" alt=""/></a>
+                      <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
                   <div class="caption">
                     <h5>Manicure &amp; Pedicure</h5>
                     <p>

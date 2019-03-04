@@ -1,30 +1,32 @@
-<div class="well well-small">
+<div class="well well-small row">
   <h4><%= t "fratured_products.title_fratured" %>
-    <small class="pull-right">200+ <%= t "fratured_products.title_fratured" %></small>
+    <small class="pull-right"><%= Product.count - 10 %>+ <%= t "fratured_products.title_fratured" %></small>
   </h4>
   <div class="row-fluid">
   <div id="featured" class="carousel slide">
   <div class="carousel-inner">
     <div class="item active">
-    <ul class="thumbnails">
+    <div class="thumbnails">
       <% @products_fratured.each do |product| %>
-        <li class="span3">
+        <div class="col-md-3">
           <div class="thumbnail">
           <i class="tag"></i>
-          <%= link_to image_tag("products/b1.jpg" ,alt: ""), "#" %>
+          <%= link_to image_tag(product.images.first.image ,alt: ""), "#" %>
           <div class="caption">
             <h5><%= t "fratured_products.title_product" %></h5>
             <h4>
-              <a class="btn" href="product_details.html">
+              <a class="btn" href="<%= product_path product.id %>">
                 <%= t "fratured_products.btn_view" %>
               </a>
-              <span class="pull-right">$222.00</span>
+              <span class="pull-right">
+                <%= number_to_currency(product.export_price, unit: "$", precision: 0, format: "%u %n") %>
+              </span>
             </h4>
           </div>
           </div>
-        </li>
+        </div>
       <% end %>
-    </ul>
+    </div>
     </div>
     </div>
     <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>

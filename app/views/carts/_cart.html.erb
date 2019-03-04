@@ -1,24 +1,38 @@
-<%= current_cart.line_items.each do |a| %>
+<% current_cart.line_items.each do |a| %>
   <tr>
-    <td>
-      <%= link_to image_tag("products/6.jpg") %>
-     <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
-    <td><%= a.product.name %><br/>Color : black, Material : metal</td>
-    <td>
-    <div class="input-append">
-      <input class="span1" style="max-width:34px" value="<%= a.quantity%>"
-        id="appendedInputButtons" size="16" type="text">
-      <button class="btn" type="button"><i class="icon-minus"></i>
-      </button>
-      <button class="btn" type="button"><i class="icon-plus"></i>
-      </button>
-      <button class="btn btn-danger" type="button">
-        <i class="icon-remove icon-white"></i>
-      </button>
-    </div>
+    <td class="col-md-2">
+      <%= link_to image_tag(a.product.images.first.image, size: 100) %>
+    <td class="col-md-4"><%= a.product.name %><br/>Color : black, Material : metal</td>
+    <td class="col-md-3">
+      <div class="form-group">
+        <input class="pull-left quantity-item col-md-2" value="<%= a.quantity%>"
+          data-id="<%= current_cart.id %>"
+          data-line-item-id="<%= a.id %>"
+          size="16" type="text">
+        <div class="pull-left">
+          <a class="btn" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=decrease&line_item_id=' << a.id.to_s %>" data-remote="true"><i class="icon-minus"></i>
+          </a>
+          <a class="btn" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=increase&line_item_id=' << a.id.to_s %>" data-remote="true"><i class="icon-plus"></i>
+          </a>
+          <a class="btn btn-danger" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=remove&line_item_id=' << a.id.to_s %>" data-remote="true">
+            <i class="icon-remove icon-white"></i>
+          </a>
+        </div>
+      </div>
     </td>
-    <td><%= a.product.export_price %></td>
-    <td><%= a.product.sale %></td>
-    <td><%= a.total_price %></td>
+    <td class="col-md-1"><%= number_to_currency(a.product.export_price, unit: "$", precision: 0, format: "%u %n") %></td>
+    <td class="col-md-1"><%= a.product.sale %></td>
+    <td class="col-md-1"><%= number_to_currency(a.total_price, unit: "$", precision: 0, format: "%u %n")%></td>
   </tr>
 <% end %>
+<tr>
+  <td>
+    <%= link_to cart_path(@cart), {:method => :delete, class: 'btn btn-warning', style: "margin-top: 10%;"},
+      data: {:confirm => t("mess_delete")} do %>
+      <i ><%= t "view_cart.btn_empty_cart" %></i>
+    <% end %>
+  </td>
+  <td colspan="5" style="text-align:right">
+    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
+  </td>
+</tr>

@@ -20,23 +20,23 @@
                 <tr>
                   <th><%= t "view_cart.product" %></th>
                   <th><%= t "view_cart.description" %></th>
-                  <th><%= t "view_cart.quantity_update" %></th>
+                  <th><%= t "view_cart.quantity" %></th>
                   <th><%= t "view_cart.price" %></th>
                   <th><%= t "view_cart.sale" %></th>
                   <th><%= t "view_cart.total" %></th>
                 </tr>
               </thead>
               <tbody>
-              <%= render current_cart %>
+              <%= render @cart %>
                 <tr>
                   <td>
                     <%= button_to @cart, :method => :delete,
-                      data: {:confirm => t("mess_delete")} do %>
+                      data: {:confirm => t("view_cart.mess_delete")} do %>
                       <i ><%= t "view_cart.btn_empty_cart" %></i>
                     <% end %>
                   </td>
                   <td colspan="5" style="text-align:right">
-                    <%= current_cart.total_price %>
+                    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
                   </td>
                 </tr>
               </tbody>
@@ -47,8 +47,6 @@
           <% end %>
         </div>
       </div>
-    <%= link_to "Edit", edit_cart_path(@cart) %> |
-    <%= link_to "Back", carts_path %>
     </div>
   </div>
 </div>

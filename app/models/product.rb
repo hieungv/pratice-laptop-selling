@@ -7,8 +7,8 @@ class Product < ApplicationRecord
   has_many :line_items
   before_destroy :check_if_has_line_item
   scope :search_product,
-   ->(name_product){where(Product.arel_table[:name].lower.matches(name_product.downcase))}
-
+    ->(name_product){where(Product.arel_table[:name].lower.matches(name_product.downcase))}
+  scope :order_desc, ->{order created_at: :desc}
   private
 
   def check_if_has_line_item
