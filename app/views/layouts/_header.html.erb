@@ -28,18 +28,7 @@
 </a>
   <div class="navbar-inner">
     <%= link_to image_tag("logo/logo.png", alt: " Logo"), root_path, class: "brand" %>
-    <form class="form-inline navbar-search" method="post" action="products.html" >
-    <input id="srchFld" class="srchTxt" type="text" />
-      <select class="srchTxt">
-      <option><%= t "all" %></option>
-      <option> <%= t "dell" %></option>
-      <option><%= t "asus" %></option>
-      <option><%= t "hp" %></option>
-    </select>
-      <button type="submit" id="submitButton" class="btn btn-primary">
-        <%= t "submit" %>
-      </button>
-    </form>
+    <%= render "products/search" %>
     <ul id="topMenu" class="nav pull-right">
       <li class="">
         <%= link_to t("check_order"), checkorder_path %>
