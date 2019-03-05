@@ -4,19 +4,7 @@
       <%= link_to image_tag("products/6.jpg") %>
      <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
     <td><%= a.product.name %><br/>Color : black, Material : metal</td>
-    <td>
-    <div class="input-append">
-      <input class="span1" style="max-width:34px" value="<%= a.quantity%>"
-        id="appendedInputButtons" size="16" type="text">
-      <button class="btn" type="button"><i class="icon-minus"></i>
-      </button>
-      <button class="btn" type="button"><i class="icon-plus"></i>
-      </button>
-      <button class="btn btn-danger" type="button">
-        <i class="icon-remove icon-white"></i>
-      </button>
-    </div>
-    </td>
+    <td><%= a.quantity%></td>
     <td><%= a.product.export_price %></td>
     <td><%= a.product.sale %></td>
     <td><%= a.total_price %></td>
