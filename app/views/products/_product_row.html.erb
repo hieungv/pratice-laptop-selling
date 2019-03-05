@@ -9,9 +9,7 @@
       </p>
       <h4 style="text-align:center">
         <a class="btn" href="product_details.html"><i class="icon-zoom-in"></i></a>
-        <%= button_to  line_items_path(:product_id => product), class: "btn", remote: true do %>
-        <i class="icon-shopping-cart"></i>
-        <% end %>
+        <%= button_to "Add to cart", line_items_path(:product_id => product), class: "btn", remote: true %>
         <a class="btn btn-primary" href="#"><%= product.export_price %></a>
       </h4>
     </div>

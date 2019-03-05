@@ -24,8 +24,9 @@ class ProductsController < ApplicationController
 
   def show
     @product_detail = Product.find_by(id: params[:id])
-    @img = Image.find_by(product_id: @product_detail)
-    return if @product_detail && @img
+    # @img = Image.find_by(product_id: @product_detail)
+    # return if @product_detail && @img
+    return @product_detail
     redirect_to root_path
     @find = current_cart.line_items
     @show_product_cart = Product.find_by(id: @find)
