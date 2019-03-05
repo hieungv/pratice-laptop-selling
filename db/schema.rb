@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_102412) do
+ActiveRecord::Schema.define(version: 2019_03_04_155659) do
 
   create_table "bills", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_03_03_102412) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "title"
     t.index ["product_id", "created_at"], name: "index_feedbacks_on_product_id_and_created_at"
   end
 

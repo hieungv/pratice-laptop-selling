@@ -114,3 +114,7 @@ en:
   delete: "Xóa"
   edit: "Sửa"
   add: "Thêm"
+  feedback:
+    contact: "Contact"
+    mess_create: "Feedback was successfully created."
+    mess_destroy: "Feedback was successfully destroyed."
