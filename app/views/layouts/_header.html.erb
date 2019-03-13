@@ -30,19 +30,35 @@
     <%= link_to image_tag("logo/logo.png", alt: " Logo"), root_path, class: "brand" %>
     <%= render "products/search" %>
     <ul id="topMenu" class="nav pull-right">
-      <li class="">
-        <%= link_to t("contact"), new_feedback_path %>
-      </li>
-      <li class="">
-        <%= link_to t("check_order"), checkorder_path %>
-      </li>
       <% if logged_in? %>
         <% if session[:admin] %>
-          <li><%= link_to "admin", admin_path %></li>
-        <% end %>
+          <li><%= link_to "Admin", admin_path %></li>
+          <li class="">
+            <%= link_to t("contact"), new_feedback_path %>
+          </li>
+          <li class="">
+            <%= link_to t("check_order"), check_order_admin_path %>
+          </li>
+          <li><%= link_to "Create Order", checkorder_path %></li>
           <li><%= link_to "Profile", "#" %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <% else %>
+          <li class="">
+            <%= link_to t("contact"), new_feedback_path %>
+          </li>
+          <li class="">
+            <%= link_to t("check_order"), checkorder_path %>
+          </li>
+          <li><%= link_to "Profile", "#" %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <% end %>
       <% else %>
+        <li class="">
+          <%= link_to t("contact"), new_feedback_path %>
+        </li>
+        <li class="">
+          <%= link_to t("check_order"), checkorder_path %>
+        </li>
         <li><%= link_to "signup.html" do %><%= t "signup" %><% end %></li>
         <li class="">
         <li><%= link_to "login", login_path %></li>

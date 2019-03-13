@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :search_product, only: %i(edit update)
 
   def index
-    @product = Product.all
+    @product = Product.all.page(params[:page]).per Settings.limit_page_admin
   end
 
   def new
@@ -23,13 +23,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product_detail = Product.find_by(id: params[:id])
+    @product_detail = Product.find_by id: params[:id]
     # @img = Image.find_by(product_id: @product_detail)
     # return if @product_detail && @img
     return @product_detail
     redirect_to root_path
     @find = current_cart.line_items
-    @show_product_cart = Product.find_by(id: @find)
+    @show_product_cart = Product.find_by id: @find
   end
 
   def edit; end
