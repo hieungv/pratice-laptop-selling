@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :find_order, only: [:show, :edit, :update, :destroy]
 
   def index
-    @orders = Order.all
+    @orders = Order.all.page(params[:page]).per Settings.limit_page_admin
   end
 
   def show; end
@@ -40,10 +40,10 @@ class OrdersController < ApplicationController
   private
 
   def find_order
-    @find_order = Order.find_by(id: params[:id])
+    @find_order = Order.find_by id: params[:id]
   end
 
   def order_params
-    params.require(:order).permit(:name, :address, :phone, :pay_type)
+    params.require(:order).permit :name, :address, :phone, :pay_type
   end
 end
