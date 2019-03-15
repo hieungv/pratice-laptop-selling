@@ -10,18 +10,17 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   post "/line_item", to: "line_items#create"
   # post "/product", to: "products#create"
-  resources :users
   get "/product_details", to: "static_pages#product_details"
   get "admin/admin"
   get "admin/index"
   get "/checkorder", to: "line_items#index"
   get "/check", to: "line_items#show"
   get "/search", to: "static_pages#index"
-<<<<<<< HEAD
-  get "/check_order_admin", to: "orders#index"
-=======
   get '/change_quantity/:id', to: "line_items#change_quantity"
->>>>>>> cart upgrade
+  get "/show_code_order", to: "orders#show_code_order"
+  get "/show_order", to: "orders#show"
+  post "/order_status", to: "orders#update"
+  get "/create_order", to: "carts#index"
   resources :carts
   resources :products
   resources :users

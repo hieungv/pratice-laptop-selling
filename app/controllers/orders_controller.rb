@@ -1,12 +1,16 @@
 class OrdersController < ApplicationController
   include LineItemsHelper
-  before_action :find_order, only: [:show, :edit, :update, :destroy]
+  before_action :find_order, only: [:show, :edit, :update,
+   :destroy, :show_code_order]
 
   def index
     @orders = Order.all.page(params[:page]).per Settings.limit_page_admin
   end
 
-  def show; end
+  def show
+    @cart_code = LineItem.where order_id: params[:cart_code]
+  end
+  def show_code_order; end
 
   def new
     return redirect_to("/", notice: "Your cart is empty") if
@@ -26,9 +30,10 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
 
         format.html do
-          redirect_to @order,
+          redirect_to show_code_order_path(id: @order),
             notice: I18n.t("order_controller.mess_order_success")
         end
+        format.js
         format.json{render "/", status: :created}
       else
         format.html{render :new}
@@ -40,6 +45,16 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     redirect_to orders_path
+  end
+
+  def update
+    @orders = Order.all
+    @order = Order.find_by id: params[:id]
+    @order.status_finish
+    respond_to do |format|
+      format.html{redirect_to check_order_admin_path}
+      format.js
+    end
   end
 
   private

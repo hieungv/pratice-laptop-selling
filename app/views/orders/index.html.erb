@@ -1,5 +1,24 @@
-
-
+<h1>Orders</h1>
+<center>
+<table width="80%" border="1px">
+  <thead>
+    <tr>
+      <th width="50px">User ID</th>
+      <th>Name</th>
+      <th>Pay Type</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Created at</th>
+      <th>Status</th>
+      <th width="5px" colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody class="order-index">
+    <%= render "orders/orders" %>
+  </tbody>
+</table>
+<%= paginate @orders, theme: "twitter-bootstrap", window: 3 %>
+</center>
 <div class="container">
   <div class="row">
     <h1>Orders</h1>

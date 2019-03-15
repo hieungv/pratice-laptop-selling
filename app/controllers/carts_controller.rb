@@ -7,7 +7,11 @@ class CartsController < ApplicationController
     @carts << Cart.find_by_id(session[:cart_id])
   end
 
-  def show; end
+  def show
+    @carts = []
+    return if session[:cart_id].nil?
+    @carts << Cart.find_by_id(session[:cart_id])
+  end
 
   def new
     @cart = Cart.new
