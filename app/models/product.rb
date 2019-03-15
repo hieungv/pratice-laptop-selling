@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  SELECT_PRODUCT = Product.all.to_a
+
   has_many :images
   has_many :feedbacks
   has_many :detail_bills

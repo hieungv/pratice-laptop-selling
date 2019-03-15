@@ -11,24 +11,11 @@
       <th>Address</th>
       <th>Phone</th>
       <th>Created at</th>
+      <th>Status</th>
       <th width="5px" colspan="3"></th>
     </tr>
   </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td style="text-align: center;"><%= order.user_id %></td>
-        <td style="text-align: center;"><%= order.name %></td>
-        <td style="text-align: center;"><%=order.pay_type %></td>
-        <td style="text-align: center;"><%= order.address %></td>
-        <td style="text-align: center;"><%= order.phone %></td>
-        <td style="text-align: center;"><%= order.created_at %></td>
-        <td style="text-align: center;"><%= link_to "Show", order %></td>
-        <td style="text-align: center;"><%= link_to "Edit", edit_order_path(order) %></td>
-        <td style="text-align: center;"><%= link_to "Destroy", order, method: :delete, data: { confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= render @orders %>
 </table>
 <%= paginate @orders, theme: "twitter-bootstrap", window: 3 %>
 </center>
