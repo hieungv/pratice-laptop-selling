@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
     @order.status_finish
     respond_to do |format|
       format.html{redirect_to check_order_admin_path}
-      format.js
+      format.js {}
     end
   end
 
