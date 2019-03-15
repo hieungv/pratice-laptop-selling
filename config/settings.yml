@@ -3,7 +3,7 @@ email_max_length: 255
 name_max_length: 50
 address_max_length: 1000
 city_length: 20
-limit_page: 21
+limit_page: 12
 limit_page_admin: 10
 limit_featured: 4
 max_name_feedback: 80

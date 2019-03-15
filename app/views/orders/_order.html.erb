@@ -1,9 +1,5 @@
-
 <tbody>
-
-
-        <div id="finish">
-
+  <div id="finish">
     <tr>
       <td style="text-align: center;" ><%= order.user_id %></td>
       <td style="text-align: center;" ><%= order.name %></td>
@@ -13,7 +9,6 @@
       <td style="text-align: center;" ><%= order.created_at %></td>
       <td style="text-align: center;" >
         <%= order.status %>
-
         </td>
       <td style="text-align: center;">
         <%= link_to "Show", show_order_path(cart_code: order), class: "btn btn-primary" %>
@@ -24,5 +19,6 @@
           <% end %>
       </td>
       <td style="text-align: center;"><%= link_to "Destroy", order, method: :delete, data: { confirm: "Are you sure?" } %></td>
-    </tr></div>
+    </tr>
+  </div>
 </tbody>

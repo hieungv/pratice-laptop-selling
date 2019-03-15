@@ -5,15 +5,16 @@ Image.create!(product_id: "1", image: "products/6.jpg")
 Product.create!(name: "Laptop xxx",
              import_price: "200",
              export_price: "300",
+             describe: "dell",
              status: "1",
              image: "1",
              sale: "40")
-
 99.times do |n|
   name  = Faker::Name.name
   Product.create!(name: name,
              import_price: "200",
              export_price: "300",
+             describe: "dell",
              status: "1",
              image: "1",
              sale: "40")

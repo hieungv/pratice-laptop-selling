@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
     @products_fratured = Product.all.limit Settings.limit_featured
-    @products = Product.search_product("#{params[:text]}%")
-                       .page(params[:page]).order_desc.per Settings.limit_page
+    @products = Product.search_product("#{params[:text]}%").search_product_describe("#{params[:describe]}%").page(params[:page]).order_desc.per Settings.limit_page
   end
 
   def compair; end

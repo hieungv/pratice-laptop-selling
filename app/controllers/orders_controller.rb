@@ -47,11 +47,7 @@ class OrdersController < ApplicationController
     @order.status_finish
     respond_to do |format|
       format.html{redirect_to check_order_admin_path}
-<<<<<<< HEAD
       format.js {}
-=======
-      format.js
->>>>>>> Update Status
     end
   end
 

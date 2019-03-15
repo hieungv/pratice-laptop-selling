@@ -5,6 +5,7 @@ class CartsController < ApplicationController
     @carts = []
     return if session[:cart_id].nil?
     @carts << Cart.find_by_id(session[:cart_id])
+    @product = Product.all.page(params[:page]).per Settings.limit_page_admin
   end
 
   def show
