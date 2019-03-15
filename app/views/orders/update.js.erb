@@ -1,2 +1,6 @@
 $(".order-index").html("<%= j render("orders/orders") %>")
-alert("Finish");
+$.notify("update to order success",
+  {
+    type: 'success',
+  }
+)

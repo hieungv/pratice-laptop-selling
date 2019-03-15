@@ -47,7 +47,7 @@ class LineItemsController < ApplicationController
     when 'input_change'
       if params[:quantity] == 0 || params[:quantity].blank?
         @line_item.destroy
-      else 
+      else
         @line_item.update quantity: params[:quantity]
       end
     end

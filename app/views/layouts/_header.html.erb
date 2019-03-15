@@ -16,41 +16,38 @@
   <span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <%= link_to "Hà shop", root_path , id: "brand", class: "navbar-brand faded", method: :get %>
+    <%= link_to "Hiếu", root_path , id: "brand", class: "navbar-brand faded", method: :get %>
     <%= render "products/search" %>
     <ul id="topMenu" class="nav pull-right">
       <% if logged_in? %>
         <% if session[:admin] %>
-          <li><%= link_to "Admin", admin_path %></li>
+
           <li class="">
-            <%= link_to t("contact"), new_feedback_path %>
+            <%= link_to "Liên hệ", new_feedback_path %>
           </li>
-          <li class="">
-            <%= link_to t("check_order"), orders_path %>
-          </li>
-          <li><%= link_to "Create Order", create_order_path(id: current_cart) %></li>
-          <li><%= link_to "Profile", "#" %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to "Quản lý đơn hàng", orders_path %></li>
+          <li><%= link_to "Quản lý sản phẩm", admin_path %></li>
+
+          <li><%= link_to "Tạo đơn hàng", create_order_path(id: current_cart) %></li>
         <% else %>
           <li class="">
-            <%= link_to t("contact"), new_feedback_path %>
+            <%= link_to "Liên hệ", new_feedback_path %>
           </li>
           <li class="">
-            <%= link_to t("check_order"), checkorder_path %>
+            <%= link_to "Kiểm tra đơn hàng", checkorder_path %>
           </li>
-          <li><%= link_to "Profile", "#" %></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
         <% end %>
+          <li><%= link_to "Đăng xuất", logout_path, method: :delete %></li>
       <% else %>
         <li class="">
-          <%= link_to t("contact"), new_feedback_path %>
+          <%= link_to "Liên hệ", new_feedback_path %>
         </li>
         <li class="">
-          <%= link_to t("check_order"), checkorder_path %>
+          <%= link_to "Kiểm tra đơn hàng", checkorder_path %>
         </li>
-        <li><%= link_to "signup.html" do %><%= t "signup" %><% end %></li>
+        <li><%= link_to "signup.html" do %>đăng ký<% end %></li>
         <li class="">
-        <li><%= link_to "Login", login_path %></li>
+        <li><%= link_to "Đăng nhập", login_path %></li>
         <div id="login" class="modal hide fade in" tabindex="-1" role="dialog"
           aria-labelledby="login" aria-hidden="false" >
           <div class="modal-header">

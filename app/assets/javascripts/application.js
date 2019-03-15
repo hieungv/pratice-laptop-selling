@@ -6,3 +6,4 @@
 //= require js/google-code-prettify/prettify.js
 //= require js/bootshop.js
 //= require bootstrap-notify.js
+//= require ckeditor/init

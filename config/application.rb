@@ -15,5 +15,7 @@ Bundler.require(*Rails.groups)
 module PraticeLaptopSelling
   class Application < Rails::Application
     config.generators.system_tests = nil
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+
   end
 end

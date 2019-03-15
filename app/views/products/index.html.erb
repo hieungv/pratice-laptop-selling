@@ -45,7 +45,7 @@
                 <td><%= image_tag(y.images.first&.image, size: 50) %></td>
                 <td><%= number_to_currency(y.import_price, unit: "$", precision: 0, format: "%u %n") %></td>
                 <td><%= number_to_currency(y.export_price, unit: "$", precision: 0, format: "%u %n") %></td>
-                <td><%= y.describe %></td>
+                <td><%= y.describe.html_safe %></td>
                 <td><%= y.note %></td>
                 <td>
                   <% if y.status == 1 %>

@@ -1,120 +1,122 @@
 en:
-  hello: "Hello world"
-  title: "Ha shop"
-  account: "ACCOUNT"
-  account_your: "YOUR ACCOUNT"
-  account_information: "PERSONAL INFORMATION"
-  account_addresses: "ADDRESSES"
-  account_discount: "DISCOUNT"
-  account_order: "ORDER HISTORY"
-  information: "INFORMATION"
-  information_contact: "CONTACT"
-  information_registration: "REGISTRATION"
-  information_notice: "LEGAL NOTICE"
-  information_terms: "TERMS AND CONDITIONS"
-  information_faq: "FAQ"
-  our_offers: "OUR OFFERS"
-  our_offers_new: "NEW PRODUCTS"
-  our_offers_top: "TOP SELLERS"
-  our_offers_special: "SPECIAL OFFERS"
-  our_offers_manufacturers: "MANUFACTURERS"
-  our_offers_suppliers: "SUPPLIERS"
-  social_media: "SOCIAL MEDIA"
-  hello: "Welcome!"
-  itemes_cart: "Items in cart"
-  all: "All"
-  submit: "Go"
-  check_order: "Check Order"
-  delivery: "sign up"
-  contact: "Contact"
-  btn_login: "Login"
-  title_login: "Login Block"
-  remember_me: "Remember me"
-  btn_lose: "Close"
-  btn_sign_in: "Sign in"
-  style_selector: "Style Selector"
-  oregional_skin: "Oregional Skin"
-  skins: "Bootswatch Skins (11)"
-  text_themes: "These are just examples and you can build your own color scheme in the backend."
-  background_patterns: "Background Patterns "
-  btn_add: "Add to"
+  hello: Hello world
+  title: Ha shop
+  account: ACCOUNT
+  account_your: YOUR ACCOUNT
+  account_information: PERSONAL INFORMATION
+  account_addresses: ADDRESSES
+  account_discount: DISCOUNT
+  account_order: ORDER HISTORY
+  information: INFORMATION
+  information_contact: CONTACT
+  information_registration: REGISTRATION
+  information_notice: LEGAL NOTICE
+  information_terms: TERMS AND CONDITIONS
+  information_faq: FAQ
+  our_offers: OUR OFFERS
+  our_offers_new: NEW PRODUCTS
+  our_offers_top: TOP SELLERS
+  our_offers_special: SPECIAL OFFERS
+  our_offers_manufacturers: MANUFACTURERS
+  our_offers_suppliers: SUPPLIERS
+  social_media: SOCIAL MEDIA
+  hello: Welcome!
+  all: All
+  submit: Go
+  check_order: Check Order
+  delivery: sign up
+  contact: Contact
+  btn_login: Login
+  title_login: Login Block
+  remember_me: Remember me
+  btn_lose: Close
+  btn_sign_in: Sign in
+  style_selector: Style Selector
+  oregional_skin: Oregional Skin
+  skins: Bootswatch Skins (11)
+  text_themes: These are just examples and you can build your own color scheme in the backend.
+  background_patterns: Background Patterns
+  btn_add: Add to
   latest_products:
-    title_latest: "Latest Products"
-    title_product: "Product name"
-    content_product: "Lorem Ipsum is simply dummy text."
+    title_latest: Latest Products
+    title_product: Product name
+    content_product: Lorem Ipsum is simply dummy text.
   fratured_products:
-    title_fratured: "Featured Products"
-    btn_view: "VIEW"
-    title_product: "Product name"
-  register_success: "register_success"
-  register_failed: "Register failed"
-  form_container: "The form contains"
-  error: "error"
-  signup: "Sign up"
-  create_account: "Create my account"
-  confirmation: "Confirmation"
-  account: "Account"
-  dell: "Dell"
-  asus: "Asus"
-  hp: "Hp"
-  user: "User"
-  invalid: "email/password not invalid"
-  create: "create"
-  ten: "Name"
-  gianhap: "Buy"
-  giaxuat: "Sell"
-  mieuta: "Description"
-  ghichu: "Note"
-  trangthai: "Status"
-  idhinhanh: "Thumbnail"
-  time: "Guarantee(Months)"
-  sale: "Sale"
-  danhsachsp: "Products List"
-  them: "Thêm"
-  stt: "STT"
-  name: "Name"
+    title_fratured: Featured Products
+    btn_view: VIEW
+    title_product: Product name
+  register_success: register_success
+  register_failed: Register failed
+  form_container: The form contains
+  error: error
+  signup: Sign up
+  create_account: Create my account
+  confirmation: Confirmation
+  account: Account
+  dell: Dell
+  asus: Asus
+  hp: Hp
+  user: User
+  invalid: email/password not invalid
+  create: create
+  ten: Name
+  gianhap: Buy
+  giaxuat: Sell
+  mieuta: Description
+  ghichu: Note
+  trangthai: Status
+  idhinhanh: Thumbnail
+  time: Guarantee(Months)
+  sale: Sale
+  danhsachsp: Products List
+  them: Add
+  stt: STT
+  name: Name
   import_price: Buy
   export_price: Sell
   describe: Description
   note: Note
-  status:
-  image: "Image"
-  time_guaranate: "Time guaranate(Months)"
-  sale: "Sale(%)"
-  success: "success"
-  no_success: "no success"
+  status: status
+  image: Image
+  time_guaranate: Time guaranate(Months)
+  sale: Sale(%)
+  success: success
+  no_success: no success
   order_controller:
-    mess_order_success: "Order was successfully created."
+    mess_order_success: Order was successfully created.
   view_cart:
-    home: "Home"
-    shopping_cart: "SHOPPING CART"
-    btn_continue_shopping: " Continue Shopping"
-    item: "Item(s)"
-    product: "Product"
-    description: "Description"
-    quantity: "Quantity"
-    price: "Price"
-    sale: "Sale (%)"
-    total: "Total"
-    mess_delete: "Are you sure?"
-    btn_empty_cart: "Empty cart"
-    btn_next: "Next"
+    home: Home
+    shopping_cart: SHOPPING CART
+    btn_continue_shopping:  Continue Shopping
+    item: Item(s)
+    product: Product
+    description: Description
+    quantity: Quantity
+    price: Price
+    sale: Sale (%)
+    total: Total
+    mess_delete: Are you sure?
+    btn_empty_cart: Empty cart
+    btn_next: Next
   order:
-    select: "Select a payment method"
-    select_1: "Payment on delivery"
-    select_2: "ATM"
+    select: Select a payment method
+    select_1: Payment on delivery
+    select_2: ATM
   line_item:
-    cart_code: "Cart Code"
-    btn_check: "Check"
+    cart_code: Cart Code
+    btn_check: Check
   product:
-    text_search: "Enter name product"
-  update: "Update"
-  save_changes: "Save changes"
-  not_found_product: "not found product"
-  delete: "Delete"
-  edit: "Edit"
-  add: "Add"
+    text_search: Enter name product
+  update: Update
+  save_changes: Save changes
+  not_found_product: not found product
+  delete: Delete
+  edit: Edit
+  add: Add
   feedback:
-    contact: "Contact"
-    mess_create: "Feedback was successfully created."
-    mess_destroy: "Feedback was successfully destroyed."
+    contact: Contact
+    mess_create: Feedback was successfully created.
+    mess_destroy: Feedback was successfully destroyed.
+  layouts:
+    cart_info_sidebar:
+      itemes_cart: Items in cart

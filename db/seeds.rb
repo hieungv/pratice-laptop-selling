@@ -10,6 +10,7 @@ User.create!(name: "Ha", email: "ha@gmail.com",
              export_price: import_price + 100,
              status: "1",
              image: rand(1..8),
+             describe: "mieuta",
              sale: "40")
   product.images.create image: "laptop/#{image_id}.jpg"
 end
