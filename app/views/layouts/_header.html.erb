@@ -7,13 +7,12 @@
     <%= link_to "EN", locale: "en" %>
     <%= link_to "VI", locale: "vi" %>
     <%= link_to "product_summary.html" do %>
-    <span>&pound;</span>
     <% end %>
-    <span class="btn btn-mini">$155.00</span>
-    <%= link_to  "#"  do %><span class="">$</span><% end %>
+    <span class="btn btn-mini"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
+    <%= link_to  "#"  do %><span class=""></span><% end %>
     <%= link_to cart_path(current_cart.id) do %><span class="btn btn-mini btn-primary">
       <i class="icon-shopping-cart icon-white"></i>
-      [ 3 ] <%= t "itemes_cart" %></span>
+      [ <%= current_cart.line_items.count %> ] <%= t "itemes_cart" %></span>
     <% end %>
 
   </div>
@@ -27,7 +26,7 @@
   <span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <%= link_to image_tag("logo/logo.png", alt: " Logo"), root_path, class: "brand" %>
+    <%= link_to "Hà shop", root_path , id: "brand", class: "navbar-brand faded", method: :get %>
     <%= render "products/search" %>
     <ul id="topMenu" class="nav pull-right">
       <% if logged_in? %>

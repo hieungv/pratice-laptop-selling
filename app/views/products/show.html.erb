@@ -57,7 +57,7 @@
             <hr class="soft"/>
             <form class="form-horizontal qtyFrm">
               <div class="control-group">
-              <label class="control-label"><span>$222.00</span></label>
+              <label class="control-label"><span><%= number_to_currency(@product_detail.export_price, unit: "$", precision: 0, format: "%u %n") %></span></label>
               <div class="controls">
                 <%= button_to "Add to cart", line_item_path(product_id: params[:id]), class: "btn btn-large btn-primary pull-right" %>
 

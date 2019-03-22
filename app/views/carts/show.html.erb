@@ -27,7 +27,7 @@
                 </tr>
               </thead>
               <tbody>
-              <%= render current_cart %>
+              <%= render @cart %>
                 <tr>
                   <td>
                     <%= button_to @cart, :method => :delete,
@@ -36,7 +36,7 @@
                     <% end %>
                   </td>
                   <td colspan="5" style="text-align:right">
-                    <%= current_cart.total_price %>
+                    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
                   </td>
                 </tr>
               </tbody>

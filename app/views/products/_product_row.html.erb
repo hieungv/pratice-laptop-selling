@@ -1,18 +1,22 @@
 <% @products.each do |product| %>
-  <li class="span3">
+  <div class="col-md-4">
     <div class="thumbnail">
-    <%= link_to image_tag("products/6.jpg", alt: "register.html"), product %>
+    <%= link_to image_tag(product.images.first.image, alt: "register.html", class: 'product-thumnail'), product %>
     <div class="caption">
       <h5 data-id="<%= product.id %>"><%= product.name %></h5>
       <p>
       <%= product.describe %>
       </p>
       <h4 style="text-align:center">
-        <a class="btn" href="product_details.html"><i class="icon-zoom-in"></i></a>
-        <%= button_to "Add to cart", line_items_path(:product_id => product), class: "btn btn-primary", remote: true %>
-        <a class="btn btn-primary" href="#"><%= product.export_price %></a>
+        <a class="btn" href="<%= product_path product.id %>"><i class="icon-zoom-in"></i></a>
+        <%= button_to  line_items_path(:product_id => product), class: "btn", remote: true do %>
+        <i class="icon-shopping-cart"></i>
+        <% end %>
+        <a class="btn btn-primary" href="#">
+          <%= number_to_currency(product.export_price, unit: "$", precision: 0, format: "%u %n") %>
+        </a>
       </h4>
     </div>
     </div>
-  </li>
+  </div>
 <% end %>
