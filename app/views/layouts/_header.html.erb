@@ -1,20 +1,10 @@
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
-  <div class="span6"><%= t "hello" %><strong> <%= t "user" %> </strong></div>
-  <div class="span6">
-  <div class="pull-right">
-    <%= link_to "EN", locale: "en" %>
-    <%= link_to "VI", locale: "vi" %>
-    <%= link_to "product_summary.html" do %>
-    <% end %>
-    <span class="btn btn-mini"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
-    <%= link_to  "#"  do %><span class=""></span><% end %>
-    <%= link_to cart_path(current_cart.id) do %><span class="btn btn-mini btn-primary">
-      <i class="icon-shopping-cart icon-white"></i>
-      [ <%= current_cart.line_items.count %> ] <%= t "itemes_cart" %></span>
-    <% end %>
-
+  <div class="col-md-6"></div>
+  <div class="col-md-6">
+  <div class="pull-right cart-info-header">
+    <%= render 'layouts/cart_info_header' %>
   </div>
   </div>
 </div>
@@ -36,9 +26,9 @@
             <%= link_to t("contact"), new_feedback_path %>
           </li>
           <li class="">
-            <%= link_to t("check_order"), check_order_admin_path %>
+            <%= link_to t("check_order"), orders_path %>
           </li>
-          <li><%= link_to "Create Order", checkorder_path %></li>
+          <li><%= link_to "Create Order", create_order_path(id: current_cart) %></li>
           <li><%= link_to "Profile", "#" %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
         <% else %>
@@ -60,7 +50,7 @@
         </li>
         <li><%= link_to "signup.html" do %><%= t "signup" %><% end %></li>
         <li class="">
-        <li><%= link_to "login", login_path %></li>
+        <li><%= link_to "Login", login_path %></li>
         <div id="login" class="modal hide fade in" tabindex="-1" role="dialog"
           aria-labelledby="login" aria-hidden="false" >
           <div class="modal-header">

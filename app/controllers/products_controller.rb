@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   include LineItemsHelper
+  before_action :authentication?, except: :show
   before_action :admin_user, only: %i(destroy)
   before_action :search_product, only: %i(edit update)
 
   def index
-    @product = Product.all.page(params[:page]).per Settings.limit_page_admin
+    @product = Product.all.order('created_at DESC').page params[:page]
   end
 
   def new
@@ -15,6 +16,7 @@ class ProductsController < ApplicationController
     @product = Product.new product_params
 
     if @product.save
+      @product.images.create image: "laptop/#{rand(1..8)}.jpg"
       flash[:info] = t "success"
       redirect_to admin_path
     else
@@ -72,5 +74,9 @@ class ProductsController < ApplicationController
     return if @product = Product.find_by(id: params[:id])
     flash[:success] = t "not_found_product"
     redirect_to admin_path
+  end
+
+  def authentication?
+    redirect_to root_path unless current_user
   end
 end

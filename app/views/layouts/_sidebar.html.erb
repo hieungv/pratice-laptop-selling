@@ -1,10 +1,6 @@
-<div id="sidebar" class="span3">
-  <div class="well well-small">
-    <%= link_to  id: "myCart" do %>
-      <%= link_to image_tag("ico/ico-cart.png", alt: "cart") %>
-      <%= current_cart.line_items.count %> <%= t "itemes_cart" %>
-      <span class="badge badge-warning pull-right"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
-    <% end %>
+<div id="sidebar" class="col-md-3">
+  <div class="well well-small cart-info-sidebar">
+    <%= render 'layouts/cart_info_sidebar' %>
   </div>
   <ul id="sideManu" class="nav nav-tabs nav-stacked">
     <li class="subMenu open"><a> LAPTOP [<%= Product.count %>]</a>
@@ -48,12 +44,12 @@
   <div class="caption">
     <h5><%= Product.last.name %></h5>
     <h4 style="text-align:center">
-      <a class="btn" href="product_details.html">
+      <a class="btn" href="<%= product_path Product.last %>">
         <i class="icon-zoom-in"></i>
       </a>
       <a class="btn" href="#"><%= t "btn_add" %><i class="icon-shopping-cart"></i>
       </a>
-      <a class="btn btn-primary" href="#">$222.00</a>
+      <a class="btn btn-primary" href="#"><%= number_to_currency(Product.last.export_price, unit: "$", precision: 0, format: "%u %n") %> </a>
     </h4>
   </div>
   </div><br/>
@@ -63,13 +59,13 @@
     <div class="caption">
       <h5><%= Product.first.name %></h5>
         <h4 style="text-align:center">
-          <a class="btn" href="product_details.html">
+          <a class="btn" href="<%= product_path Product.first %>">
             <i class="icon-zoom-in"></i>
           </a>
           <a class="btn" href="#"><%= t "btn_add" %>
             <i class="icon-shopping-cart"></i>
           </a>
-          <a class="btn btn-primary" href="#">$222.00
+          <a class="btn btn-primary" href="#"><%= number_to_currency(Product.first.export_price, unit: "$", precision: 0, format: "%u %n") %> 
           </a>
         </h4>
     </div>

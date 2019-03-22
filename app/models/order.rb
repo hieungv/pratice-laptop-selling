@@ -13,4 +13,8 @@ class Order < ApplicationRecord
       line_items << item
     end
   end
+
+  def status_finish
+    update_columns status: "finish"
+  end
 end

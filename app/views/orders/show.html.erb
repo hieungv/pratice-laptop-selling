@@ -1,6 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Cart code: <%= @find_order.id %></strong>
-</p>
-<%= link_to "Back", root_path %>
+<div id="mainBody">
+  <div class="container">
+    <div class="row">
+      <div class="span9">
+        <%= link_to "Back", check_order_admin_path %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><%= t "view_cart.description" %></th>
+              <th><%= t "view_cart.quantity" %></th>
+              <th><%= t "view_cart.price" %></th>
+              <th><%= t "view_cart.sale" %></th>
+              <th><%= t "view_cart.total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%=  @cart_code.each do |a| %>
+              <tr>
+                <td><%= a.product.name %><br/>Color : black, Material : metal</td>
+                <td><%= a.quantity %></td>
+                <td><%= a.product.export_price %></td>
+                <td><%= a.product.sale %></td>
+                <td><%= a.total_price %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to "Back", check_order_admin_path %>
+      </div>
+    </div>
+  </div>
+</div>

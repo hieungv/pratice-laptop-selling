@@ -1,6 +1,6 @@
 en:
   hello: "Hello world"
-  title: "Bootshop online Shopping cart"
+  title: "Ha shop"
   account: "ACCOUNT"
   account_your: "YOUR ACCOUNT"
   account_information: "PERSONAL INFORMATION"
@@ -21,7 +21,7 @@ en:
   our_offers_suppliers: "SUPPLIERS"
   social_media: "SOCIAL MEDIA"
   hello: "Welcome!"
-  itemes_cart: "Items in your cart"
+  itemes_cart: "Items in cart"
   all: "All"
   submit: "Go"
   check_order: "Check Order"
@@ -50,7 +50,7 @@ en:
   register_failed: "Register failed"
   form_container: "The form contains"
   error: "error"
-  signup: "sign up"
+  signup: "Sign up"
   create_account: "Create my account"
   confirmation: "Confirmation"
   account: "Account"
@@ -60,27 +60,27 @@ en:
   user: "User"
   invalid: "email/password not invalid"
   create: "create"
-  ten: "Tên"
-  gianhap: "Giá nhập"
-  giaxuat: "Giá xuất"
-  mieuta: "Miêu tả"
-  ghichu: "Ghi chú"
-  trangthai: "Trạng thái"
-  idhinhanh: "ID hình ảnh"
-  time: "Thời gian bảo hành"
-  sale: "Giảm giá"
-  danhsachsp: "Danh sách sản phẩm "
+  ten: "Name"
+  gianhap: "Buy"
+  giaxuat: "Sell"
+  mieuta: "Description"
+  ghichu: "Note"
+  trangthai: "Status"
+  idhinhanh: "Thumbnail"
+  time: "Guarantee(Months)"
+  sale: "Sale"
+  danhsachsp: "Products List"
   them: "Thêm"
   stt: "STT"
   name: "Name"
-  import_price:
-  export_price:
-  describe:
-  note:
+  import_price: Buy
+  export_price: Sell
+  describe: Description
+  note: Note
   status:
   image: "Image"
-  time_guaranate: "Time guaranate"
-  sale: "Sale"
+  time_guaranate: "Time guaranate(Months)"
+  sale: "Sale(%)"
   success: "success"
   no_success: "no success"
   order_controller:
@@ -111,9 +111,9 @@ en:
   update: "Update"
   save_changes: "Save changes"
   not_found_product: "not found product"
-  delete: "Xóa"
-  edit: "Sửa"
-  add: "Thêm"
+  delete: "Delete"
+  edit: "Edit"
+  add: "Add"
   feedback:
     contact: "Contact"
     mess_create: "Feedback was successfully created."

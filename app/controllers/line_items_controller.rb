@@ -16,8 +16,8 @@ class LineItemsController < ApplicationController
   def edit; end
 
   def create
-    product = Product.find params[:product_id]
-    @line_item = current_cart.add_product(product.id)
+    @product = Product.find params[:product_id]
+    @line_item = current_cart.add_product(@product.id)
     respond_to do |format|
       if @line_item.save
         format.html{redirect_to "/"}
@@ -28,6 +28,27 @@ class LineItemsController < ApplicationController
         format.json do
           render json: @line_item.errors, status: :unprocessable_entity
         end
+      end
+    end
+  end
+
+  def change_quantity
+    @cart = Cart.find_by_id params[:id]
+    return unless @cart
+    @line_item = @cart.line_items.find_by_id params["line_item_id"]
+    return unless @line_item
+    case params[:type]
+    when 'decrease'
+      @line_item.update quantity: (@line_item.quantity - 1)
+    when 'increase'
+      @line_item.update quantity: (@line_item.quantity + 1)
+    when 'remove'
+      @line_item.destroy
+    when 'input_change'
+      if params[:quantity] == 0 || params[:quantity].blank?
+        @line_item.destroy
+      else 
+        @line_item.update quantity: params[:quantity]
       end
     end
   end

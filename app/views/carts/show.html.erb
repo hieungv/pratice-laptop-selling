@@ -1,8 +1,12 @@
 <div id="mainBody">
   <div class="container">
     <div class="row">
-      <div class="span9">
-        <p id="notice"><%= notice %></p>
+      <div class="col-md-12">
+        <% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
         <ul class="breadcrumb">
         <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
         <li class="active"><%= t "view_cart.shopping_cart" %></li>
@@ -30,8 +34,9 @@
               <%= render @cart %>
                 <tr>
                   <td>
-                    <%= button_to @cart, :method => :delete,
-                      data: {:confirm => t("view_cart.mess_delete")} do %>
+
+                    <%= button_to @cart, {:method => :delete, class: 'btn btn-warning', style: "margin-top: 10%;"},
+                      data: {:confirm => t("mess_delete")} do %>
                       <i ><%= t "view_cart.btn_empty_cart" %></i>
                     <% end %>
                   </td>
@@ -41,7 +46,7 @@
                 </tr>
               </tbody>
             </table>
-            <%= link_to new_order_path, method: :get, class: "btn btn-large pull-right"  do %><br>
+            <%= link_to new_order_path, method: :get, class: "btn btn-info pull-right"  do %>
               <i class="icon-arrow-right"></i> <%= t "view_cart.btn_next" %>
             <% end %>
           <% end %>

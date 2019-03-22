@@ -1,3 +1,7 @@
-var content = "<%= escape_javascript(render(current_cart)) %>";
-// document.getElementById("cart").innerHTML = content;
-alert("Add success");
+$('.cart-info-header').html("<%= j render("layouts/cart_info_header") %>")
+$('.cart-info-sidebar').html("<%= j render("layouts/cart_info_sidebar") %>")
+$.notify("Add item [<%= @product.name %>] to cart success",
+  {
+    type: 'success',
+  }
+)
