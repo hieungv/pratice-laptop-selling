@@ -26,3 +26,41 @@
   font-size: 2.5vw;
   font-weight: bolder;
 }
+
+.banner {
+  height: 400px;
+  width: 700px;
+}
+
+.table {
+
+
+  th, td {
+    text-align: center; 
+    vertical-align: middle !important;
+  }
+}
+
+#myCarousel .carousel-control {
+  margin-top: 10%;
+}
+
+#featured {
+  .carousel-control {
+    display: none;
+  }
+}
+.index {
+  ul.thumbnails {
+    margin-left: 5%;
+  }
+}
+
+.srchTxt {
+  height: 30px !important;
+}
+
+.quantity-item {
+  height: 34px !important;
+  margin: 0 30px;
+}

@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  paginates_per 10
   has_many :images
   has_many :feedbacks
   has_many :detail_bills

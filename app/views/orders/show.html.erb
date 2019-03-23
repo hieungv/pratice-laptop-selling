@@ -1,6 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Cart code: <%= @find_order.id %></strong>
-</p>
-<%= link_to "Back", root_path %>
+<% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-6">
+      <p>
+        <strong>Cart code: <%= @find_order.id %></strong>
+      </p>
+      <%= link_to "Back", root_path, class: "btn btn-primary pull-right" %>
+    </div>
+  </div>
+</div>

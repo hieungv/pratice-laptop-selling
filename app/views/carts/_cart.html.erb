@@ -6,17 +6,15 @@
     <td class="col-md-3">
       <div class="form-group">
         <input class="pull-left quantity-item col-md-2" value="<%= a.quantity%>"
-          data-id="<%= current_cart.id %>"
-          data-line-item-id="<%= a.id %>"
-          size="16" type="text">
+           size="16" type="text">
         <div class="pull-left">
-          <a class="btn" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=decrease&line_item_id=' << a.id.to_s %>" data-remote="true"><i class="icon-minus"></i>
-          </a>
-          <a class="btn" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=increase&line_item_id=' << a.id.to_s %>" data-remote="true"><i class="icon-plus"></i>
-          </a>
-          <a class="btn btn-danger" href="<%= '/change_quantity/' << current_cart.id.to_s << '?type=remove&line_item_id=' << a.id.to_s %>" data-remote="true">
+          <button class="btn" type="button"><i class="icon-minus"></i>
+          </button>
+          <button class="btn" type="button"><i class="icon-plus"></i>
+          </button>
+          <button class="btn btn-danger" type="button">
             <i class="icon-remove icon-white"></i>
-          </a>
+          </button>
         </div>
       </div>
     </td>

@@ -2,14 +2,11 @@
 $(document).ready(function(){
 	/* carousel of home page animation */
 	$('#myCarousel').carousel({
-	  interval: 4000
+	  interval: 3000
 	})
 	 $('#featured').carousel({
-	  interval: 4000
+	  interval: 3000
 	})
-	$(function() {
-		$('#gallery a').lightBox();
-	});
 	
 	$('.subMenu > a').click(function(e)
 	{

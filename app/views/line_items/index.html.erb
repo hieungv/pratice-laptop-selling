@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="span9">
-        <p id="notice"><%= notice %></p>
+        <% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
         <%= render "form" %>
       </div>
     </div>

@@ -12,24 +12,24 @@
   <% end %>
 
 
-    <div class="field">
+    <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, size: 40 %>
+        <%= f.text_field :name, class: 'form-control col-md-6', size: 40 %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= f.label :address %>
-        <%= f.text_area :address, rows: 3, cols: 40 %>
+        <%= f.text_area :address, class: 'form-control col-md-6', rows: 3, cols: 40 %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= f.label :Phone %>
-        <%= f.text_field :phone, size: 40 %>
+        <%= f.text_field :phone, class: 'form-control col-md-6', size: 40 %>
     </div>
-    <div class="field">
+    <div class="form-group">
         <%= f.label :pay_type %>
-        <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t("select_0") %>
+        <%= f.select :pay_type, options_for_select(Order::PAYMENT_TYPES, prompt: t("select_0")), {}, { class: 'form-control col-md-6' } %>
     </div>
 
     <div class="actions">
-        <%= f.submit "Place order" %>
+        <%= f.submit "Place order", class: 'btn btn-primary pull-right', style: "margin-top: 5px;" %>
     </div>
 <% end %>

@@ -1,9 +1,12 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 <div id="mainBody">
   <div class="container">
   <div class="row">
 <div class="span9">
-<p id="notice"><%= notice %></p>
 
     <ul class="breadcrumb">
     <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
