@@ -17,7 +17,7 @@
               <tr>
                 <td>
                   <%= link_to image_tag(a.product.images.first.image, size: 50) %>
-                 <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
+                </td>
                 <td><%= a.product.name %><br/>Color : black, Material : metal</td>
                 <td><%= a.quantity %></td>
                 <td><%= number_to_currency(a.product.export_price, unit: "$", precision: 0, format: "%u %n") %></td>

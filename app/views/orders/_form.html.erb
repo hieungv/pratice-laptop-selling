@@ -1,3 +1,4 @@
+
 <%= form_with model: @order, local: true do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -30,6 +31,6 @@
     </div>
 
     <div class="actions">
-        <%= f.submit "Place order", class: 'btn btn-primary pull-right', style: "margin-top: 5px;" %>
+        <%= f.submit (@order.new_record? ? "Place order" : "Save"), class: 'btn btn-primary pull-right', style: "margin-top: 5px;" %>
     </div>
 <% end %>
