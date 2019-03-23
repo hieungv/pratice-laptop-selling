@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   get "/checkorder", to: "line_items#index"
   get "/check", to: "line_items#show"
   get "/search", to: "static_pages#index"
+<<<<<<< HEAD
   get "/check_order_admin", to: "orders#index"
+=======
+  get '/change_quantity/:id', to: "line_items#change_quantity"
+>>>>>>> cart upgrade
   resources :carts
   resources :products
   resources :users

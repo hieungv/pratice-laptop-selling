@@ -32,6 +32,27 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def change_quantity
+    cart = Cart.find_by_id params[:id]
+    return unless cart
+    @line_item = cart.line_items.find_by_id params["line_item_id"]
+    return unless @line_item
+    case params[:type]
+    when 'decrease'
+      @line_item.update quantity: (@line_item.quantity - 1)
+    when 'increase'
+      @line_item.update quantity: (@line_item.quantity + 1)
+    when 'remove'
+      @line_item.destroy
+    when 'input_change'
+      if params[:quantity] == 0 || params[:quantity].blank?
+        @line_item.destroy
+      else 
+        @line_item.update quantity: params[:quantity]
+      end
+    end
+  end
+
   private
 
   def find_line_item

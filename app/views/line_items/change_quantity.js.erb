@@ -1,0 +1,6 @@
+$('.items-cart').html("<%= j render("carts/cart") %>");
+$.notify("Update item [<%= @line_item.product.name %>] in cart success",
+  {
+    type: 'success',
+  }
+)

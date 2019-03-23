@@ -22,7 +22,7 @@
           <tr>
             <td><%= order.name %></td>
             <td><%= number_to_currency(order.line_items.sum{|item| item.quantity * (item.product.export_price * item.product.sale / 100)}, format: "%u %n", precision: 0) %></td>
-            <td></td>
+            <td><span class="badge badge-warning"> Waiting</span></td>
             <td><%= order.address %></td>
             <td>
               <%= link_to 'Show', check_path(cart_code: order.id), class: "btn btn-info" %>

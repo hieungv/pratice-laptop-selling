@@ -30,19 +30,8 @@
                   <th><%= t "view_cart.total" %></th>
                 </tr>
               </thead>
-              <tbody>
-              <%= render @cart %>
-                <tr>
-                  <td>
-                    <%= button_to @cart, {:method => :delete, class: 'btn btn-warning', style: "margin-top: 10%;"},
-                      data: {:confirm => t("mess_delete")} do %>
-                      <i ><%= t "view_cart.btn_empty_cart" %></i>
-                    <% end %>
-                  </td>
-                  <td colspan="5" style="text-align:right">
-                    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
-                  </td>
-                </tr>
+              <tbody class="items-cart">
+                <%= render @cart %>
               </tbody>
             </table>
             <%= link_to new_order_path, method: :get, class: "btn btn-info pull-right"  do %>
@@ -54,3 +43,20 @@
     </div>
   </div>
 </div>
+
+<%= javascript_tag do %>
+  $(document).on('keypress', '.quantity-item', function(e) {
+      if(e.which == 13) {
+          $.ajax({
+            url: '/change_quantity/' + $(this).data('id'),
+            type: 'get',
+            data: {
+              line_item_id: $(this).data('line-item-id'),
+              type: 'input_change',
+              quantity: $(this).val(),
+            },
+            dataType: 'script',
+          })
+      }
+  });
+<% end %>
