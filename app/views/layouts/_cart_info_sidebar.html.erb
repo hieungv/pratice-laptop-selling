@@ -1,0 +1,5 @@
+<%= link_to  id: "myCart" do %>
+  <%= link_to image_tag("ico/ico-cart.png", alt: "cart") %>
+  <%= current_cart.line_items.sum(:quantity) %> <%= t "itemes_cart" %>
+  <span class="badge badge-warning pull-right"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
+<% end %>

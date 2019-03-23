@@ -21,7 +21,7 @@ en:
   our_offers_suppliers: "SUPPLIERS"
   social_media: "SOCIAL MEDIA"
   hello: "Welcome!"
-  itemes_cart: "Items in your cart"
+  itemes_cart: "Items in cart"
   all: "All"
   submit: "Go"
   check_order: "Check Order"
@@ -67,20 +67,20 @@ en:
   ghichu: "Note"
   trangthai: "Status"
   idhinhanh: "Thumbnail"
-  time: "Guarantee"
+  time: "Guarantee(Months)"
   sale: "Sale"
   danhsachsp: "Products List"
   them: "Thêm"
   stt: "STT"
   name: "Name"
-  import_price:
-  export_price:
-  describe:
-  note:
+  import_price: Buy
+  export_price: Sell
+  describe: Description
+  note: Note
   status:
   image: "Image"
-  time_guaranate: "Time guaranate"
-  sale: "Sale"
+  time_guaranate: "Time guaranate(Months)"
+  sale: "Sale(%)"
   success: "success"
   no_success: "no success"
   order_controller:

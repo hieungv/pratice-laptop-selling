@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :search_product, only: %i(edit update)
 
   def index
-    @product = Product.all.page params[:page]
+    @product = Product.all.order('created_at DESC').page params[:page]
   end
 
   def new
@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
     @product = Product.new product_params
 
     if @product.save
+      @product.images.create image: "laptop/#{rand(1..8)}.jpg"
       flash[:info] = t "success"
       redirect_to admin_path
     else

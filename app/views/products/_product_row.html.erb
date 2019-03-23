@@ -1,5 +1,5 @@
 <% @products.each do |product| %>
-  <li class="col-md-3">
+  <div class="col-md-4">
     <div class="thumbnail">
     <%= link_to image_tag(product.images.first.image, alt: "register.html", class: 'product-thumnail'), product %>
     <div class="caption">

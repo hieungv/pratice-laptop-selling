@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <%= render "layouts/sidebar" %>
-    <div class="span9">
+    <div class="col-md-9">
       <ul class="breadcrumb">
       <li><a href="index.html">Home</a> <span class="divider">/</span></li>
       <li><a href="products.html">Products</a><span class="divider">/</span>
@@ -10,36 +10,11 @@
       <li class="active">product Details</li>
       </ul>
     <div class="row">
-      <div id="gallery" class="span3">
+      <div id="gallery" class="col-md-6">
         <a href="themes/images/products/large/f1.jpg"
           title="Fujifilm FinePix S2950 Digital Camera">
-          <%= image_tag("products/6.jpg", style: "width:100%") %></a>
-      <div id="differentview" class="moreOptopm carousel slide">
-        <div class="carousel-inner">
-          <div class="item active">
-            <a href="themes/images/products/large/f1.jpg">
-            <img style="width:29%" src="themes/images/products/large/f1.jpg"
-              alt=""/></a>
-            <a href="themes/images/products/large/f2.jpg">
-              <img style="width:29%" src="themes/images/products/large/f2.jpg"
-                alt=""/></a>
-            <a href="themes/images/products/large/f3.jpg" >
-              <img style="width:29%" src="themes/images/products/large/f3.jpg"
-                alt=""/></a>
-          </div>
-          <div class="item">
-            <a href="themes/images/products/large/f3.jpg" >
-              <img style="width:29%" src="themes/images/products/large/f3.jpg"
-                alt=""/></a>
-            <a href="themes/images/products/large/f1.jpg">
-              <img style="width:29%" src="themes/images/products/large/f1.jpg"
-              alt=""/></a>
-            <a href="themes/images/products/large/f2.jpg">
-              <img style="width:29%" src="themes/images/products/large/f2.jpg"
-              alt=""/></a>
-          </div>
-            </div>
-          </div>
+          <%= image_tag(@img.image, style: "width:100%") %></a>
+
           <div class="btn-toolbar">
             <div class="btn-group">
             <span class="btn"><i class="icon-envelope"></i></span>
@@ -51,7 +26,7 @@
             </div>
           </div>
           </div>
-          <div class="span6">
+          <div class="col-md-6">
             <h3><%= @product_detail.name %> </h3>
             <small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
             <hr class="soft"/>
@@ -95,7 +70,7 @@
             <a href="#" name="detail"></a>
             <hr class="soft"/>
           </div>
-          <div class="span9">
+          <div class="col-md-12">
             <ul id="productDetail" class="nav nav-tabs">
               <li class="active">
                 <a href="#home" data-toggle="tab">Product Details</a></li>
@@ -346,120 +321,28 @@
           </div>
             <div class="tab-pane active" id="blockView">
               <ul class="thumbnails">
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html">
-                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                    <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html">
-                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                    <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html">
-                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                     <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html">
-                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                     <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
-                  <a href="product_details.html">
-                    <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                     <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
-                <li class="span3">
-                  <div class="thumbnail">
+                <% 4.times do |time| %>
+                  <% product = Product.find(rand(1..Product.count)) %>
+                  <li class="col-md-5">
+                    <div class="thumbnail">
                     <a href="product_details.html">
-                      <%= link_to image_tag("products/6.jpg", alt: "register.html") %>
-                  <div class="caption">
-                    <h5>Manicure &amp; Pedicure</h5>
-                    <p>
-                    Lorem Ipsum is simply dummy text.
-                    </p>
-                    <h4 style="text-align:center">
-                      <a class="btn" href="product_details.html">
-                        <i class="icon-zoom-in"></i></a>
-                        <a class="btn" href="#">Add to
-                          <i class="icon-shopping-cart"></i></a>
-                          <a class="btn btn-primary" href="#">&euro;222.00</a>
-                    </h4>
-                  </div>
-                  </div>
-                </li>
+                      <%= image_tag product.images.first.image, class: 'related-image' %></a>
+                    <div class="caption">
+                      <h5><%= product.name %></h5>
+                      <p>
+                      Lorem Ipsum is simply dummy text.
+                      </p>
+                      <h4 style="text-align:center">
+                        <a class="btn" href="product_details.html">
+                          <i class="icon-zoom-in"></i></a>
+                          <a class="btn" href="#">Add to
+                            <i class="icon-shopping-cart"></i></a>
+                            <a class="btn btn-primary" href="#"><%= number_to_currency(product.export_price, unit: "$", precision: 0, format: "%u %n") %></a>
+                      </h4>
+                    </div>
+                    </div>
+                  </li>
+                <% end %>
               </ul>
               <hr class="soft"/>
             </div>

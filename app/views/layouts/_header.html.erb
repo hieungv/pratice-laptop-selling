@@ -3,18 +3,8 @@
 <div id="welcomeLine" class="row">
   <div class="col-md-6"><%= t "hello" %><strong> <%= t "user" %> </strong></div>
   <div class="col-md-6">
-  <div class="pull-right">
-    <%= link_to "EN", locale: "en" %>
-    <%= link_to "VI", locale: "vi" %>
-    <%= link_to "product_summary.html" do %>
-    <% end %>
-    <span class="btn btn-mini"><%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %></span>
-    <%= link_to  "#"  do %><span class=""></span><% end %>
-    <%= link_to cart_path(current_cart.id) do %><span class="btn btn-mini btn-primary">
-      <i class="icon-shopping-cart icon-white"></i>
-      [ <%= current_cart.line_items.count %> ] <%= t "itemes_cart" %></span>
-    <% end %>
-
+  <div class="pull-right cart-info-header">
+    <%= render 'layouts/cart_info_header' %>
   </div>
   </div>
 </div>

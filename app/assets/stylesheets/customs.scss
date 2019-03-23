@@ -51,8 +51,11 @@
   }
 }
 .index {
-  ul.thumbnails {
-    margin-left: 5%;
+  div.thumbnails {
+    img {
+      height: 120px;
+      width: 160px;
+    }
   }
 }
 
@@ -63,4 +66,13 @@
 .quantity-item {
   height: 34px !important;
   margin: 0 30px;
+}
+
+.badge-success {
+  background-color: green !important;
+}
+
+.related-image {
+  width: 100px !important;
+  height: 70px !important;
 }
