@@ -12,17 +12,17 @@
   <% end %>
     <h4><%= t "feedback.contact" %></h4>
 
-<div class="control-group">
-   <%= form.text_field :title, size: 40, placeholder: "title" %>
+  <div class="control-group">
+   <%= form.text_field :title, size: 40, placeholder: "Title" %>
   </div>
   <div class="control-group">
-   <%= form.text_field :name, size: 40, placeholder: "name" %>
+   <%= form.text_field :name, size: 40, placeholder: "Name" %>
   </div>
   <div class="control-group">
-    <%= form.text_area :content, placeholder: "content" %>
+    <%= form.text_area :content, placeholder: "Content" %>
   </div>
 
   <div class="btn-large">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

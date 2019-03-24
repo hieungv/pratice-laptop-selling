@@ -57,8 +57,8 @@
                 <td><%= y.time_guaranate %></td>
                 <td><%= y.sale.to_s << '%' %></td>
                 <td>
-                  <%= link_to t("delete"), y, method: :delete, class: "btn btn-primary"%>
-                  <%= link_to t("edit"), edit_product_path(y), class: "btn btn-danger" %>
+                  <%= link_to t("edit"), edit_product_path(y), class: "btn btn-primary" %>
+                  <%= link_to t("delete"), y, method: :delete, class: "btn btn-danger"%>
                 </td>
               </tr>
               <% end %>
