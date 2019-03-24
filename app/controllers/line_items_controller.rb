@@ -33,9 +33,9 @@ class LineItemsController < ApplicationController
   end
 
   def change_quantity
-    cart = Cart.find_by_id params[:id]
-    return unless cart
-    @line_item = cart.line_items.find_by_id params["line_item_id"]
+    @cart = Cart.find_by_id params[:id]
+    return unless @cart
+    @line_item = @cart.line_items.find_by_id params["line_item_id"]
     return unless @line_item
     case params[:type]
     when 'decrease'

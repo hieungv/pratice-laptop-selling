@@ -11,7 +11,7 @@
         <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
         <li class="active"><%= t "view_cart.shopping_cart" %></li>
         </ul>
-        <h3><%= t "view_cart.shopping_cart" %>[ <small>3 <%= t "view_cart.item" %></small>]
+        <h3><%= t "view_cart.shopping_cart" %>[ <small><%= current_cart.line_items.sum(:quantity) %> <%= t "view_cart.item" %></small>]
           <%= link_to root_path, class: "btn btn-large pull-right" do %>
             <i class="icon-arrow-left"></i><%= t "view_cart.btn_continue_shopping" %>
           <% end %>
