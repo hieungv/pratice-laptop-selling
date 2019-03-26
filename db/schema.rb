@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_105219) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "product_id"
-    t.string "image"
+    t.string "image", default: "laptop/4.jpg"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
