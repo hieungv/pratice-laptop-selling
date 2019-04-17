@@ -1,0 +1,57 @@
+<div id="mainBody">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+        <ul class="breadcrumb">
+        <li><a href="index.html"><%= t "view_cart.home" %></a> <span class="divider">/</span></li>
+        <li class="active"><%= t "view_cart.shopping_cart" %></li>
+        </ul>
+        <h3><%= t "view_cart.shopping_cart" %>[ <small>3 <%= t "view_cart.item" %></small>]
+          <%= link_to root_path, class: "btn btn-large pull-right" do %>
+            <i class="icon-arrow-left"></i><%= t "view_cart.btn_continue_shopping" %>
+          <% end %>
+        </h3>
+        <hr class="soft"/>
+        <div id="cart">
+          <% if hide_cart_if? %>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><%= t "view_cart.product" %></th>
+                  <th><%= t "view_cart.description" %></th>
+                  <th><%= t "view_cart.quantity" %></th>
+                  <th><%= t "view_cart.price" %></th>
+                  <th><%= t "view_cart.sale" %></th>
+                  <th><%= t "view_cart.total" %></th>
+                </tr>
+              </thead>
+              <tbody>
+              <%= render @cart %>
+                <tr>
+                  <td>
+
+                    <%= button_to @cart, {:method => :delete, class: 'btn btn-warning', style: "margin-top: 10%;"},
+                      data: {:confirm => t("mess_delete")} do %>
+                      <i ><%= t "view_cart.btn_empty_cart" %></i>
+                    <% end %>
+                  </td>
+                  <td colspan="5" style="text-align:right">
+                    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <%= link_to new_order_path, method: :get, class: "btn btn-info pull-right"  do %>
+              <i class="icon-arrow-right"></i> <%= t "view_cart.btn_next" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

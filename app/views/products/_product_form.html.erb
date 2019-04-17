@@ -1,0 +1,58 @@
+<%= form_with model: @product do |f| %>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="form-group">
+      <%= f.label :name, "Tên sản phẩm" %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :import_price, "giá nhập" %>
+      <%= f.number_field :import_price, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :export_price, "giá bán" %>
+      <%= f.number_field :export_price, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :note, "Ghi chú" %>
+      <%= f.text_field :note , class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :status, "trạng thái" %>
+      <%= f.select :status, options_for_select([["Avaiable", 1], ["Sold out", 0]]), class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image, "Hình ảnh" %>
+      <% if !@product.new_record? %>
+        <%= image_tag(@product.images.first.image, size: 100) %>
+      <% else %>
+        <%= f.file_field :image, class: 'form-control-file' %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :time_guaranate, "Thời gian bảo hành" %>
+      <%= f.text_field :time_guaranate, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sale, t("sale") %>
+      <%= f.number_field :sale , class: 'form-control'%>
+    </div>
+  </div>
+      <div class="col-lg-8">
+    <div class="field">
+      <%= f.label :describe, "Miêu tả" %><br>
+      <%= f.text_area :describe, class: "ckeditor" %>
+    </div>
+  </div>
+</div>
+  <div class="form-group pull-right">
+    <%= f.submit "Thêm", class: "btn btn-primary" %>
+  </div>
+<% end %>

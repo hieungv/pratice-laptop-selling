@@ -1,0 +1,78 @@
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+.color{
+  color: red;
+}
+
+.product-thumnail {
+  height: 100px !important;
+  width: 150px;
+}
+#brand {
+  float: left;
+  padding: 10px 20px 10px 0;
+  color: white;
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+
+.banner {
+  height: 400px;
+  width: 700px;
+}
+
+.table {
+
+
+  th, td {
+    text-align: center; 
+    vertical-align: middle !important;
+  }
+}
+
+#myCarousel .carousel-control {
+  margin-top: 10%;
+}
+
+#featured {
+  .carousel-control {
+    display: none;
+  }
+}
+.index {
+  div.thumbnails {
+    img {
+      height: 120px;
+      width: 160px;
+    }
+  }
+}
+
+.srchTxt {
+  height: 30px !important;
+}
+
+.quantity-item {
+  height: 34px !important;
+  margin: 0 30px;
+}
+
+.badge-success {
+  background-color: green !important;
+}
+
+.related-image {
+  width: 100px !important;
+  height: 70px !important;
+}

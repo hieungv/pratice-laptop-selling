@@ -1,0 +1,33 @@
+<div id="mainBody">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"><table class="table table-bordered">
+          <thead>
+            <tr>
+              <th><%= t "view_cart.product" %></th>
+              <th><%= t "view_cart.description" %></th>
+              <th><%= t "view_cart.quantity_update" %></th>
+              <th><%= t "view_cart.price" %></th>
+              <th><%= t "view_cart.sale" %></th>
+              <th><%= t "view_cart.total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%  @cart_code.each do |a| %>
+              <tr>
+                <td>
+                  <%= link_to image_tag(a.product.images.first.image, size: 50) %>
+                </td>
+                <td><%= a.product.name %><br/>Color : black, Material : metal</td>
+                <td><%= a.quantity %></td>
+                <td><%= number_to_currency(a.product.export_price, unit: "$", precision: 0, format: "%u %n") %></td>
+                <td><%= a.product.sale.to_s << '%' %></td>
+                <td><%= number_to_currency(a.total_price, unit: "$", precision: 0, format: "%u %n") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

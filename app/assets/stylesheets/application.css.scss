@@ -1,0 +1,13 @@
+ /*
+ *= require bootshop/bootstrap.min
+ *= require css/base
+ *= require css/bootstrap-responsive.min
+ *= require css/font-awesome
+ *= require js/google-code-prettify/prettify
+ *= require switch/themeswitch
+ *= require_self
+ *= require customs
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+

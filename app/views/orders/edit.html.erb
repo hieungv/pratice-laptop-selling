@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <h1>Editing Order</h1>
+
+        <div class="form-group">
+            <%= render 'form', order: @order %>
+        </div>
+
+        <div class="form-group" style="clear: both;">
+            <%= link_to 'Show Items', check_path(cart_code: @order.id), class: "btn btn-info" %>
+            <%= link_to 'Back Manage Orders', orders_path, class: "btn btn-info"%>
+        </div>
+    </div>
+</div>

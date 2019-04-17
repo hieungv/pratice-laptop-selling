@@ -1,0 +1,36 @@
+<% current_cart.line_items.each do |a| %>
+  <tr>
+    <td class="col-md-2">
+      <%= link_to image_tag(a.product.images.first.image, size: 100) %>
+    <td class="col-md-4"><%= a.product.name %><br/>Color : black, Material : metal</td>
+    <td class="col-md-3">
+      <div class="form-group">
+        <input class="pull-left quantity-item col-md-2" value="<%= a.quantity%>"
+           size="16" type="text">
+        <div class="pull-left">
+          <button class="btn" type="button"><i class="icon-minus"></i>
+          </button>
+          <button class="btn" type="button"><i class="icon-plus"></i>
+          </button>
+          <button class="btn btn-danger" type="button">
+            <i class="icon-remove icon-white"></i>
+          </button>
+        </div>
+      </div>
+    </td>
+    <td class="col-md-1"><%= number_to_currency(a.product.export_price, unit: "$", precision: 0, format: "%u %n") %></td>
+    <td class="col-md-1"><%= a.product.sale %></td>
+    <td class="col-md-1"><%= number_to_currency(a.total_price, unit: "$", precision: 0, format: "%u %n")%></td>
+  </tr>
+<% end %>
+<tr>
+  <td>
+    <%= link_to cart_path(@cart), {:method => :delete, class: 'btn btn-warning', style: "margin-top: 10%;"},
+      data: {:confirm => t("mess_delete")} do %>
+      <i ><%= t "view_cart.btn_empty_cart" %></i>
+    <% end %>
+  </td>
+  <td colspan="5" style="text-align:right">
+    <%= number_to_currency(current_cart.total_price, unit: "$", precision: 0, format: "%u %n") %>
+  </td>
+</tr>

@@ -1,0 +1,80 @@
+<div id="sidebar" class="col-md-3">
+  <div class="well well-small cart-info-sidebar">
+    <%= render 'layouts/cart_info_sidebar' %>
+  </div>
+  <ul id="sideManu" class="nav nav-tabs nav-stacked">
+    <li class="subMenu open"><a> LAPTOP [<%= Product.count %>]</a>
+      <ul>
+        <li>
+          <%= link_to "../search?describe=dell", class: "active" do %>
+            <i class="icon-chevron-right"></i>DEL (100)
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "../search?describe=ASUS" do %>
+            <i class="icon-chevron-right"></i>ASUS (30)
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "../search?describe=LENOVO" do %>
+            <i class="icon-chevron-right"></i>LENOVO (80)
+          <% end %>
+        </li>
+      </ul>
+    </li>
+    <li class="subMenu"><a> ACCESSORIES [120] </a>
+      <ul style="display:none">
+        <li>
+          <%= link_to "products.html" do %>
+            <i class="icon-chevron-right"></i>RAM (45)
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "products.html" do %>
+          <i class="icon-chevron-right"></i>ROM (8)
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <br/>
+  <div class="thumbnail">
+  <%= link_to image_tag(Product.last.images.first.image,
+    alt: "Bootshop panasonoc New camera") %>
+  <div class="caption">
+    <h5><%= Product.last.name %></h5>
+    <h4 style="text-align:center">
+      <a class="btn" href="<%= product_path Product.last %>">
+        <i class="icon-zoom-in"></i>
+      </a>
+      <a class="btn" href="#"><%= t "btn_add" %><i class="icon-shopping-cart"></i>
+      </a>
+      <a class="btn btn-primary" href="#"><%= number_to_currency(Product.last.export_price, unit: "$", precision: 0, format: "%u %n") %> </a>
+    </h4>
+  </div>
+  </div><br/>
+  <div class="thumbnail">
+    <%= link_to image_tag(Product.first.images.first.image,
+      alt: "Bootshop panasonoc New camera", title: "Bootshop New Kindel") %>
+    <div class="caption">
+      <h5><%= Product.first.name %></h5>
+        <h4 style="text-align:center">
+          <a class="btn" href="<%= product_path Product.first %>">
+            <i class="icon-zoom-in"></i>
+          </a>
+          <a class="btn" href="#"><%= t "btn_add" %>
+            <i class="icon-shopping-cart"></i>
+          </a>
+          <a class="btn btn-primary" href="#"><%= number_to_currency(Product.first.export_price, unit: "$", precision: 0, format: "%u %n") %> 
+          </a>
+        </h4>
+    </div>
+    </div><br/>
+  <div class="thumbnail">
+    <%= link_to image_tag("payment_methods.png",
+      alt: "Bootshop panasonoc New camera", title: "Bootshop New Kindel") %>
+    <div class="caption">
+      <h5>Payment Methods</h5>
+    </div>
+  </div>
+</div>

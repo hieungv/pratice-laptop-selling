@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h1>Orders</h1>
+    <div class="form-group">
+      <%= link_to 'New Order', new_order_path, class: "btn btn-primary" %>
+    </div>
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th class="col-md-2">Name</th>
+          <th class="col-md-2">Price</th>
+          <th class="col-md-2">Status</th>
+          <th class="col-md-2">Address</th>
+          <th class="col-md-3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody class="order-index">
+       <%= render "orders" %>
+      </tbody>
+    </table>
+    <%= paginate @orders, theme: "twitter-bootstrap", window: 3 %>
+  </div>
+</div>
+
+<br>

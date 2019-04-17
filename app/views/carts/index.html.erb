@@ -1,0 +1,37 @@
+<% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div id="mainBody">
+  <div class="container">
+  <div class="row">
+<div class="span9">
+<p id="notice"><%= notice %></p>
+<%= render "search" %>
+  <table width="100%">
+    <thead>
+      <th>Name product</th>
+      <th>Import price</th>
+      <th>Export price</th>
+      <th>Sale</th>
+      <th colspan="2"></th>
+    </thead>
+    <% @product.each do |product| %>
+      <tbody>
+        <td><%= product.name %></td>
+        <td style="text-align: center;" ><%= product.import_price %></td>
+        <td style="text-align: center;" ><%= product.export_price %></td>
+        <td style="text-align: center;" ><%= product.sale %></td>
+        <td style="text-align: center;" ><%= link_to "Hiển thị", product, class: "btn btn-primary", target: "_blank" %></td>
+        <td>
+ <%= button_to "Thêm vào giỏ hàng", line_items_path(product_id: product), class: "btn btn-primary", remote: true %>
+        </td>
+      </tbody>
+    <% end %>
+  </table>
+  <%= paginate @product, theme: "twitter-bootstrap", window: 3 %>
+      </div>
+    </div>
+  </div>
+</div>

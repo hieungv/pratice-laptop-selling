@@ -1,0 +1,16 @@
+ <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.name %></td>
+            <td><%= number_to_currency(order.line_items.sum{|item| item.quantity * (item.product.export_price * item.product.sale / 100)}, format: "%u %n", precision: 0) %></td>
+            <td><span class="badge badge-warning"><%= order.status %></span></td>
+            <td><%= order.address %></td>
+            <td>
+              <%= form_for order, remote: true do |f| %>
+            <%= f.submit "Finish", class: "btn btn-primary"  %>
+          <% end %>
+              <%= link_to "Show", check_path(cart_code: order.id), class: "btn btn-info" %>
+              <%= link_to "Edit", edit_order_path(order), class: "btn btn-primary" %>
+              <%= link_to "Destroy", order, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>

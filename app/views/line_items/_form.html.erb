@@ -1,0 +1,11 @@
+<%= form_tag check_path, method: :get do %>
+  <div class="form-group col-md-12">
+    <div class="col-md-6">
+      <%= text_field_tag 'cart_code', params[:cart_code],
+        placeholder: "Enter cart code", class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= submit_tag t("line_item.btn_check"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
